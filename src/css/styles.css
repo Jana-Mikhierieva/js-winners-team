@@ -22,6 +22,9 @@
 @import url('./reviews.css');
 @import url('./work-together.css');
 @import url('./menu.css');
+
+
+
 /* стилі бібліотек */
 @import "izitoast/dist/css/iziToast.min.css";
 @import 'swiper/swiper-bundle.css';
