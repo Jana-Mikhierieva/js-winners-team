@@ -13,10 +13,19 @@
 }
 body {
   font-family: 'Inter Tight', sans-serif;
-  display: flex;
-  flex-direction: column;
-  min-width: 100vw;
-  min-height: 100vh;
-  margin: 0;
 }
 
+:root {
+  background-color: #1c1d20;
+  color: #fafafa;
+  font-style: normal;
+  line-height: 1;
+  font-optical-sizing: auto;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  scroll-behavior: smooth;
+}
