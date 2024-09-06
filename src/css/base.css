@@ -13,8 +13,11 @@
 }
 body {
   font-family: 'Inter Tight', sans-serif;
+  margin: 0;
 }
-
+img {
+  display: block;
+}
 :root {
   background-color: #1c1d20;
   color: #fafafa;
