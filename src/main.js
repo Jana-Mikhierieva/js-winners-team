@@ -1,5 +1,13 @@
-import axios from 'axios';
-import Accordion from 'accordion-js';
-import iziToast from "izitoast";
-import Swiper from 'swiper';
-
+// import axios from 'axios';
+// import Accordion from 'accordion-js';
+// import iziToast from "izitoast";
+// import Swiper from 'swiper';
+import './js/about-me';
+import './js/covers';
+import './js/faq';
+import './js/header';
+import './js/menu';
+import './js/modal-window';
+import './js/projects';
+import './js/reviews';
+import './js/work-together';
