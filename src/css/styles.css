@@ -12,7 +12,6 @@
 
 /* Sections style */
 @import url('./header.css');
-@import url('./vite-promo.css');
 @import url('./back-link.css');
 @import url('./about-me.css');
 @import url('./benefits.css');
@@ -21,6 +20,6 @@
 @import url('./hero.css');
 @import url('./modal-window.css');
 @import url('./projects.css');
-/* @import url('./reviews.css'); */
+@import url('./reviews.css');
 @import url('./work-together.css');
 @import url('./menu.css');
