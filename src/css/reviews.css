@@ -1,0 +1,30 @@
+.reviews{}
+
+.reviews__heading{}
+
+.reviews__list{}
+
+.reviews__item{}
+
+.reviews__image{}
+
+.reviews__title{}
+
+.reviews__text{}
+
+.reviews__buttons{}
+
+.reviews__btn{
+	background-color: transparent;
+	border: solid 1px #FAFAFA80;
+	border-radius: 50%;
+	padding: 18px;
+}
+
+.reviews__disabled {
+	border-color: #FAFAFA33;
+}
+
+.reviews__error{
+	display: none;
+}
