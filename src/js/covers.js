@@ -1,55 +1,84 @@
-'use strict';
+// Імпорт зображень
+import powerPulsDesk from '/img/img-cover/power-puls-desk.jpg';
+import powerPulsDesk2x from '/img/img-cover/power-puls-desk@2x.jpg';
 
-// Масив з зображеннями
+import miminoDesk from '/img/img-cover/mimino-desk.jpg';
+import miminoDesk2x from '/img/img-cover/mimino-desk@2x.jpg';
+
+import ukranianDesk from '/img/img-cover/ukranian-desk.jpg';
+import ukranianDesk2x from '/img/img-cover/ukranian-desk@2x.jpg';
+
+import vegetablesDesk from '/img/img-cover/vegetables-desk.jpg';
+import vegetablesDesk2x from '/img/img-cover/vegetables-desk@2x.jpg';
+
+import financesDesk from '/img/img-cover/finances-desk.jpg';
+import financesDesk2x from '/img/img-cover/finances-desk@2x.jpg';
+
+import faceDesk from '/img/img-cover/face-desk.jpg';
+import faceDesk2x from '/img/img-cover/face-desk@2x.jpg';
+
+import bodyDesk from '/img/img-cover/body-desk.jpg';
+import bodyDesk2x from '/img/img-cover/body-desk@2x.jpg';
+
+import fruitsDesk from '/img/img-cover/fruits-desk.jpg';
+import fruitsDesk2x from '/img/img-cover/fruits-desk@2x.jpg';
+
+import englishDesk from '/img/img-cover/english-desk.jpg';
+import englishDesk2x from '/img/img-cover/english-desk@2x.jpg';
+
+import businesDesk from '/img/img-cover/busines-desk.jpg';
+import businesDesk2x from '/img/img-cover/busines-desk@2x.jpg';
+
+// Масив з імпортованими зображеннями
 const imgCovers = [
   {
-    src: "/img/img-cover/power-puls-desk.jpg",
-    srcset: "/img/img-cover/power-puls-desk.jpg 1x, /img/img-cover/power-puls-desk@2x.jpg 2x",
+    src: powerPulsDesk,
+    srcset: `${powerPulsDesk} 1x, ${powerPulsDesk2x} 2x`,
     alt: "A girl training at 'PowerPuls' gym",
   },
   {
-    src: "/img/img-cover/mimino-desk.jpg",
-    srcset: "/img/img-cover/mimino-desk.jpg 1x, /img/img-cover/mimino-desk@2x.jpg 2x",
+    src: miminoDesk,
+    srcset: `${miminoDesk} 1x, ${miminoDesk2x} 2x`,
     alt: "White title on black, left side shows a hotel facade",
   },
   {
-    src: "/img/img-cover/ukranian-desk.jpg",
-    srcset: "/img/img-cover/ukranian-desk.jpg 1x, /img/img-cover/ukranian-desk@2x.jpg 2x",
+    src: ukranianDesk,
+    srcset: `${ukranianDesk} 1x, ${ukranianDesk2x} 2x`,
     alt: "Girl in embroidered shirt on gray",
   },
   {
-    src: "/img/img-cover/vegetables-desk.jpg",
-    srcset: "/img/img-cover/vegetables-desk.jpg 1x, /img/img-cover/vegetables-desk@2x.jpg 2x",
+    src: vegetablesDesk,
+    srcset: `${vegetablesDesk} 1x, ${vegetablesDesk2x} 2x`,
     alt: "Basket of vegetables on green",
   },
   {
-    src: "/img/img-cover/finances-desk.jpg",
-    srcset: "/img/img-cover/finances-desk.jpg 1x, /img/img-cover/finances-desk@2x.jpg 2x",
+    src: financesDesk,
+    srcset: `${financesDesk} 1x, ${financesDesk2x} 2x`,
     alt: "Couple with laptop, credit card",
-    },
+  },
   {
-    src: "/img/img-cover/face-desk.jpg",
-    srcset: "/img/img-cover/face-desk.jpg 1x, /img/img-cover/face-desk@2x.jpg 2x",
+    src: faceDesk,
+    srcset: `${faceDesk} 1x, ${faceDesk2x} 2x`,
     alt: "Woman's face on brown, white title",
-    },
+  },
   {
-    src: "/img/img-cover/body-desk.jpg",
-    srcset: "/img/img-cover/body-desk.jpg 1x, /img/img-cover/body-desk@2x.jpg 2x",
+    src: bodyDesk,
+    srcset: `${bodyDesk} 1x, ${bodyDesk2x} 2x`,
     alt: "Girl with dumbbells, black title",
-    },
+  },
   {
-    src: "/img/img-cover/fruits-desk.jpg",
-    srcset: "/img/img-cover/fruits-desk.jpg 1x, /img/img-cover/fruits-desk@2x.jpg 2x",
+    src: fruitsDesk,
+    srcset: `${fruitsDesk} 1x, ${fruitsDesk2x} 2x`,
     alt: "Title with orange, citrus fruits",
   },
   {
-    src: "/img/img-cover/english-desk.jpg",
-    srcset: "/img/img-cover/english-desk.jpg 1x, /img/img-cover/english-desk@2x.jpg 2x",
+    src: englishDesk,
+    srcset: `${englishDesk} 1x, ${englishDesk2x} 2x`,
     alt: "Schoolgirl writing at desk",
-    },
+  },
   {
-    src: "/img/img-cover/busines-desk.jpg",
-    srcset: "/img/img-cover/busines-desk.jpg 1x, /img/img-cover/busines-desk@2x.jpg 2x",
+    src: businesDesk,
+    srcset: `${businesDesk} 1x, ${businesDesk2x} 2x`,
     alt: "White title on black background",
   }
 ];
