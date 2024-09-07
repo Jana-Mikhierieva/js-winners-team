@@ -1,0 +1,98 @@
+.work-together__section {
+  background-image: url('../img/background/background-together.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 290px 0;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2),
+  screen and (min-resolution: 192dpi) {
+  .work-together__section {
+    background-image: url('../img/background/background-together@2x.png');
+  }
+}
+
+.work-together__wrapper {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.work-together__header {
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.work-together__header-change-color {
+  color: #ed3b44;
+}
+
+.work-together__form {
+  margin-top: 64px;
+}
+
+.work-together__form-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  margin-bottom: 32px;
+}
+
+.work-together__input {
+  height: 44px;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(250, 250, 250, 0.2);
+  outline: 1px solid transparent;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: rgba(250, 250, 250, 0.6);
+  background-color: inherit;
+}
+
+.work-together__button {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 64px;
+  border: none;
+  border-radius: 50%;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: inherit;
+  background-color: #ed3b44;
+}
+
+.work-together__address {
+  max-width: 320px;
+  font-style: normal;
+}
+
+@media screen and (max-width: 374px) {
+  .work-together__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+  }
+}
+
+.work-together__list {
+  display: flex;
+  column-gap: 4px;
+}
+
+.work-together__link {
+  display: inline-block;
+  padding: 10px 12px;
+  border: 1px solid rgba(250, 250, 250, 0.2);
+  border-radius: 60px;
+  font-size: 14px;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
