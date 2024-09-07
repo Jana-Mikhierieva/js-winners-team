@@ -1,5 +1,64 @@
-<section class="work-together">
-    <div class="container">
-    
+<section class="work-together__section">
+  <div class="container">
+    <div class="work-together__wrapper">
+      <picture>
+        <source
+          srcset="
+            ../img/img-together/image.together-mob.png    1x,
+            ../img/img-together/image.together-mob@2x.png 2x
+          "
+          media="(max-width: 767px)"
+        />
+        <source
+          srcset="
+            ../img/img-together/image.together-desk-lap.png    1x,
+            ../img/img-together/image.together-desk-lap@2x.png 2x
+          "
+          media="(min-width: 768px)"
+        />
+        <img
+          src="../img/img-together/image.together-mob.png"
+          alt="Fullstack developer Lloyd Jefferson"
+          class="work-together__img"
+        />
+      </picture>
+      <h2 class="work-together__header">
+        Let&#8217;s
+        <span class="work-together__header-change-color">work</span>
+      </h2>
     </div>
+    <h2 class="work-together__header">together</h2>
+    <form class="work-together__form">
+      <div class="work-together__form-wrapper">
+        <input
+          class="work-together__input"
+          type="email"
+          placeholder="clients@gmail.com"
+          pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+        />
+        <input
+          class="work-together__input"
+          type="text"
+          placeholder="comments"
+        />
+      </div>
+      <button class="work-together__button js-open-modal" type="submit">
+        Send
+      </button>
+    </form>
+    <address class="work-together__address">
+      <ul class="work-together__list">
+        <li>
+          <a class="work-together__link" href="mailto:lloydjefferson@gmail.com"
+            >lloydjefferson@gmail.com</a
+          >
+        </li>
+        <li>
+          <a class="work-together__link" href="tel:+380111111111"
+            >+380 11 1111 11 11</a
+          >
+        </li>
+      </ul>
+    </address>
+  </div>
 </section>

@@ -4,6 +4,7 @@
   | default @import url()
   |============================
 */
+
 /* Common styles */
 @import url('./reset.css');
 @import url('./base.css');
@@ -21,7 +22,6 @@
 @import url('./projects.css');
 @import url('./reviews.css');
 @import url('./work-together.css');
-@import url('./menu.css');
 
 
 

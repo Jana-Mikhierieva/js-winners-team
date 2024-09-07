@@ -1,7 +1,9 @@
 import { getReview } from "./api";
 import Swiper from 'swiper/bundle'; 
 
+
 const reviewsContainer = document.querySelector('.js-reviews');
+
 
 window.onload = async () => {
     const reviews = await getReview();
@@ -77,3 +79,6 @@ window.onload = async () => {
 
     swiper.on('slideChange', disabledNavigationButtons);
 };
+
+
+
