@@ -6,23 +6,6 @@ const reviewsContainer = document.querySelector('.js-reviews');
 window.onload = async () => {
     const reviews = await getReview();
 
-    function createMarkupReviews(array) {
-        return array.map(ar => `
-          <li class="reviews__item swiper-slide">
-            <img 
-              class="reviews__image" 
-              src="${ar.avatar_url}" 
-              alt="commentator's photo" 
-            />
-            <h4 class="reviews__title">${ar.author}</h4>
-            <p class="reviews__text">${ar.review}</p>
-          </li>`).join('');
-    }
-
-    function renderMarkupReviews(callback, array) {
-        reviewsContainer.insertAdjacentHTML('beforeend', callback(array));
-    }
-
     renderMarkupReviews(createMarkupReviews, reviews);
 
     const swiper = new Swiper('.swiper', {
@@ -54,33 +37,68 @@ window.onload = async () => {
         }
     });
 
-function disabledNavigationButtons() {
-    const prevButton = document.querySelector('.reviews__btn--prev');
-    const nextButton = document.querySelector('.reviews__btn--next');
-    const prevIcon = document.querySelector('.js-review-icon-prev');
-    const nextIcon = document.querySelector('.js-review-icon-next');;
-
-    if (swiper.isBeginning) {
-        prevButton.classList.add('reviews__btn--disabled');
-        prevIcon.classList.add('reviews__icon--disabled');
-        prevButton.setAttribute('disabled', 'true');
-    } else {
-        prevButton.classList.remove('reviews__btn--disabled');
-        prevIcon.classList.remove('reviews__icon--disabled');
-        prevButton.removeAttribute('disabled');
-    }
-
-    if (swiper.isEnd) {
-        nextButton.classList.add('reviews__btn--disabled');
-        nextIcon.classList.add('reviews__icon--disabled');
-        nextButton.setAttribute('disabled', 'true');
-    } else {
-        nextButton.classList.remove('reviews__btn--disabled');
-        nextIcon.classList.remove('reviews__icon--disabled');
-        nextButton.removeAttribute('disabled');
-    }
-}
+    // об'єкт який містить посилання на кнопки та іконки на яких змінюємо класи
+    // на місце цих класів '.reviews__btn--prev','.js-review-icon-prev' і т.д повставляйте свої
+    const refsOption = {
+        prevButton: document.querySelector('.reviews__btn--prev'),
+        nextButton: document.querySelector('.reviews__btn--next'),
+        prevIcon: document.querySelector('.js-review-icon-prev'),
+        nextIcon: document.querySelector('.js-review-icon-next'),
+    };
     
-    disabledNavigationButtons();
-    swiper.on('slideChange', disabledNavigationButtons);
+    // об'єкт який містить атрибут та класи які треба вішати або знімати
+    // на місце цих класів 'reviews__btn--disabled','reviews__icon--disabled' і т.д повставляйте свої
+    const classOptions = {
+        disabledBtnClass: 'reviews__btn--disabled',
+        disabledIconClass: 'reviews__icon--disabled',
+        disabledAttribute: 'disabled',
+    };
+    
+    // виклик функції та передача аргументів
+    disabledNavigationButtons(swiper, refsOption, classOptions);
+    swiper.on('slideChange', () => disabledNavigationButtons(swiper, refsOption, classOptions));
 };
+
+function createMarkupReviews(array) {
+     return array.map(ar => `
+      <li class="reviews__item swiper-slide">
+        <img 
+          class="reviews__image" 
+          src="${ar.avatar_url}" 
+          alt="commentator's photo" 
+        />
+        <h4 class="reviews__title">${ar.author}</h4>
+        <p class="reviews__text">${ar.review}</p>
+      </li>`).join('');
+}
+
+function renderMarkupReviews(callback, array) {
+    reviewsContainer.insertAdjacentHTML('beforeend', callback(array));
+}
+
+// ФУНКЦІЯ ДЛЯ РОБОТИ З КНОПКАМИ ЯКІ ПЕРЕМИКАЮТЬ СВАЙПЕР
+// ІМПОРТУЙТЕ ЇЇ ТА ВИКЛИЧІТЬ ТАМ ДЕ ІНІЦІАЛІЗУЄТЕ СВАЙПЕР
+// ПЕРЕДАЙТЕ ЇЙ ТРИ АРГУМЕНТИ:
+// el-це сам свайпер
+// refsOption-об'єкт який містить посилання на кнопки та іконки на яких змінюємо класи
+// classOptions-об'єкт який містить атрибут та класи які треба вішати
+export function disabledNavigationButtons(el, refsOption, classOptions) {
+    const { prevButton, nextButton, prevIcon, nextIcon } = refsOption;
+    const { disabledBtnClass, disabledIconClass, disabledAttribute } = classOptions;
+
+    const toggleClass = (element, condition, className) => {
+        condition ? element.classList.add(className) : element.classList.remove(className);
+    };
+
+    const toggleAttribute = (element, condition, attrName) => {
+        condition ? element.setAttribute(attrName, 'true') : element.removeAttribute(attrName);
+    };
+
+    toggleClass(prevButton, el.isBeginning, disabledBtnClass);
+    toggleClass(prevIcon, el.isBeginning, disabledIconClass);
+    toggleAttribute(prevButton, el.isBeginning, disabledAttribute);
+
+    toggleClass(nextButton, el.isEnd, disabledBtnClass);
+    toggleClass(nextIcon, el.isEnd, disabledIconClass);
+    toggleAttribute(nextButton, el.isEnd, disabledAttribute);
+}
