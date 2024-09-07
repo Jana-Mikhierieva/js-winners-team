@@ -1,3 +1,4 @@
+
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 // import Swiper from 'swiper/bundle';
@@ -39,3 +40,4 @@ const swiper = new Swiper('.swiper', {
 });
 
 console.log('Hello!');
+
