@@ -1,11 +1,11 @@
 import axios from 'axios';
 import iziToast from "izitoast";
 
-axios.defaults.baseURL = 'https://portfolio-js.b.goit.study/api/reviews';
+axios.defaults.baseURL = 'https://portfolio-js.b.goit.study/api';
 
 export async function getReview() {
     try {
-	    const response = await axios.get();
+	    const response = await axios.get('/reviews');
 	    
 	  if (response.data.length === 0) {
   
@@ -16,9 +16,9 @@ export async function getReview() {
 		  return;
 	    }
 	    return response.data;
-    } catch {
+    } catch(error) {
         iziToast.error({
-			message: "Sorry, no Reviews found.",
+			message: error.message,
 			position: 'bottomRight',
 		  });
     }
