@@ -1,5 +1,51 @@
+.covers {
+  max-width: 375px;
+  height: 508px;
+  padding: 82px 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url('/img/background/elements-vectors.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-clip: content-box;
+  overflow: hidden;
+}
+
+.covers-container {
+  position: relative;
+}
+
+.covers-content {
+  position: absolute;
+  right: -3009px;
+  left: 0;
+  bottom: -900px;
+}
+
 .covers-gallery {
+  width: calc(282px * 10 + 9 * 21px);
+  transform: rotate(16deg);
   display: flex;
   flex-wrap: wrap;
-  gap: 50px;
+  gap: 21px;
+}
+
+.covers-gallery-item {
+  width: 282px;
+  height: 163px;
+  animation-name: marqueeLine;
+  animation-duration: 10s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes marqueeLine {
+  from {
+    transform: translateX(-20%);
+  }
+
+  to {
+    transform: translateX(-900%);
+  }
 }
