@@ -16,10 +16,10 @@ export async function getReview() {
 		  return;
 	    }
 	    return response.data;
-    } catch {
+    } catch(error) {
         iziToast.error({
-			message: "Oops...Something went wrong!",
-			position: 'bottomRight',
+				message: "Oops...Something went wrong!",
+			  position: 'bottomRight',
 		  });
     }
 }
