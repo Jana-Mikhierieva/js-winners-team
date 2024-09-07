@@ -10,7 +10,7 @@ export async function getReview() {
 	  if (response.data.length === 0) {
   
 		  iziToast.error({
-			message: "Sorry, no Reviews found.",
+			message: "Oops...Something went wrong!",
 			position: 'bottomRight',
 		  });
 		  return;
@@ -18,8 +18,8 @@ export async function getReview() {
 	    return response.data;
     } catch(error) {
         iziToast.error({
-			message: error.message,
-			position: 'bottomRight',
+				message: "Oops...Something went wrong!",
+			  position: 'bottomRight',
 		  });
     }
 }

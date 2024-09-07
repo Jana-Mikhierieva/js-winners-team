@@ -1,5 +1,6 @@
 import { getReview } from "./api"; 
 
+
 const reviewsContainer = document.querySelector('.js-reviews');
 const reviews = await getReview();
 
@@ -21,3 +22,5 @@ function renderMarkupReviews(callback,array) {
 }
 
 renderMarkupReviews(createMarkupReviews, reviews);
+
+
