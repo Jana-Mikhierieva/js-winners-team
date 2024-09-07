@@ -1,3 +1,3 @@
 import { getReview } from "./api"; 
 
-const api = await getReview();
+const reviews = await getReview();
