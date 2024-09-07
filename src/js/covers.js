@@ -1,33 +1,33 @@
 // Імпорт зображень
-import powerPulsDesk from '/img/img-cover/power-puls-desk.jpg';
-import powerPulsDesk2x from '/img/img-cover/power-puls-desk@2x.jpg';
+import powerPulsDesk from '/img/img-cover/power-puls.png';
+import powerPulsDesk2x from '/img/img-cover/power-puls@2x.png';
 
-import miminoDesk from '/img/img-cover/mimino-desk.jpg';
-import miminoDesk2x from '/img/img-cover/mimino-desk@2x.jpg';
+import miminoDesk from '/img/img-cover/mimino.png';
+import miminoDesk2x from '/img/img-cover/mimino@2x.png';
 
-import ukranianDesk from '/img/img-cover/ukranian-desk.jpg';
-import ukranianDesk2x from '/img/img-cover/ukranian-desk@2x.jpg';
+import ukranianDesk from '/img/img-cover/ukranian.png';
+import ukranianDesk2x from '/img/img-cover/ukranian@2x.png';
 
-import vegetablesDesk from '/img/img-cover/vegetables-desk.jpg';
-import vegetablesDesk2x from '/img/img-cover/vegetables-desk@2x.jpg';
+import vegetablesDesk from '/img/img-cover/vegetables.png';
+import vegetablesDesk2x from '/img/img-cover/vegetables@2x.png';
 
-import financesDesk from '/img/img-cover/finances-desk.jpg';
-import financesDesk2x from '/img/img-cover/finances-desk@2x.jpg';
+import financesDesk from '/img/img-cover/finances.png';
+import financesDesk2x from '/img/img-cover/finances@2x.png';
 
-import faceDesk from '/img/img-cover/face-desk.jpg';
-import faceDesk2x from '/img/img-cover/face-desk@2x.jpg';
+import faceDesk from '/img/img-cover/face.png';
+import faceDesk2x from '/img/img-cover/face@2x.png';
 
-import bodyDesk from '/img/img-cover/body-desk.jpg';
-import bodyDesk2x from '/img/img-cover/body-desk@2x.jpg';
+import bodyDesk from '/img/img-cover/body.png';
+import bodyDesk2x from '/img/img-cover/body@2x.png';
 
-import fruitsDesk from '/img/img-cover/fruits-desk.jpg';
-import fruitsDesk2x from '/img/img-cover/fruits-desk@2x.jpg';
+import fruitsDesk from '/img/img-cover/fruits.png';
+import fruitsDesk2x from '/img/img-cover/fruits@2x.png';
 
-import englishDesk from '/img/img-cover/english-desk.jpg';
-import englishDesk2x from '/img/img-cover/english-desk@2x.jpg';
+import englishDesk from '/img/img-cover/english.png';
+import englishDesk2x from '/img/img-cover/english@2x.png';
 
-import businesDesk from '/img/img-cover/busines-desk.jpg';
-import businesDesk2x from '/img/img-cover/busines-desk@2x.jpg';
+import businesDesk from '/img/img-cover/busines.png';
+import businesDesk2x from '/img/img-cover/busines@2x.png';
 
 // Масив з імпортованими зображеннями
 const imgCovers = [
