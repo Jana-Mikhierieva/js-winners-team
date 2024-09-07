@@ -1,9 +1,7 @@
 import { getReview } from "./api";
 import Swiper from 'swiper/bundle'; 
 
-
 const reviewsContainer = document.querySelector('.js-reviews');
-
 
 window.onload = async () => {
     const reviews = await getReview();
@@ -22,7 +20,7 @@ window.onload = async () => {
     }
 
     function renderMarkupReviews(callback, array) {
-	  reviewsContainer.insertAdjacentHTML('beforeend', callback(array));
+        reviewsContainer.insertAdjacentHTML('beforeend', callback(array));
     }
 
     renderMarkupReviews(createMarkupReviews, reviews);
@@ -38,47 +36,51 @@ window.onload = async () => {
         },
         breakpoints: {
             320: {
-                slidesPerView: 1,
-                spaceBetween: 10,
+              slidesPerView: 1,
+              spaceBetween: 16,
             },
-            640: {
-                slidesPerView: 2,
-                spaceBetween: 20,
+            375: {
+               slidesPerView: 1,
+               spaceBetween: 16,
             },
-            1024: {
-                slidesPerView: 3,
-                spaceBetween: 30,
+            768: {
+               slidesPerView: 2,
+               spaceBetween: 16,
             },
             1440: {
-                slidesPerView: 4,
-                spaceBetween: 40,
-            },
-        },
+               slidesPerView: 4,
+               spaceBetween: 16,
+             },
+        }
     });
-	
-	swiper.init();
-	
-    function disabledNavigationButtons() {
-        const prevButton = document.querySelector('.js-swiper-prev');
-        const nextButton = document.querySelector('.js-swiper-next');
 
-        if (swiper.isBeginning) {
-            prevButton.classList.add('reviews__disabled');
-        } else {
-            prevButton.classList.remove('reviews__disabled');
-        }
+function disabledNavigationButtons() {
+    const prevButton = document.querySelector('.reviews__btn--prev');
+    const nextButton = document.querySelector('.reviews__btn--next');
+    const prevIcon = document.querySelector('.js-review-icon-prev');
+    const nextIcon = document.querySelector('.js-review-icon-next');;
 
-        if (swiper.isEnd) {
-            nextButton.classList.add('reviews__disabled');
-        } else {
-            nextButton.classList.remove('reviews__disabled');
-        }
-	}
-	
+    if (swiper.isBeginning) {
+        prevButton.classList.add('reviews__btn--disabled');
+        prevIcon.classList.add('reviews__icon--disabled');
+        prevButton.setAttribute('disabled', 'true');
+    } else {
+        prevButton.classList.remove('reviews__btn--disabled');
+        prevIcon.classList.remove('reviews__icon--disabled');
+        prevButton.removeAttribute('disabled');
+    }
+
+    if (swiper.isEnd) {
+        nextButton.classList.add('reviews__btn--disabled');
+        nextIcon.classList.add('reviews__icon--disabled');
+        nextButton.setAttribute('disabled', 'true');
+    } else {
+        nextButton.classList.remove('reviews__btn--disabled');
+        nextIcon.classList.remove('reviews__icon--disabled');
+        nextButton.removeAttribute('disabled');
+    }
+}
+    
     disabledNavigationButtons();
-
     swiper.on('slideChange', disabledNavigationButtons);
 };
-
-
-
