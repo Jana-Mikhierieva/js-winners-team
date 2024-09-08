@@ -5,38 +5,7 @@ const reviewsContainer = document.querySelector('.js-reviews');
 
 window.onload = async () => {
     const reviews = await getReview();
-
-    renderMarkupReviews(createMarkupReviews, reviews);
-
-    const swiper = new Swiper('.swiper', {
-        keyboard: {
-            enabled: true,
-            onlyInViewport: false,
-        },
-        navigation: {
-            nextEl: '.reviews__btn--next',
-            prevEl: '.reviews__btn--prev',
-        },
-        breakpoints: {
-            320: {
-              slidesPerView: 1,
-              spaceBetween: 16,
-            },
-            375: {
-               slidesPerView: 1,
-               spaceBetween: 16,
-            },
-            768: {
-               slidesPerView: 2,
-               spaceBetween: 16,
-            },
-            1440: {
-               slidesPerView: 4,
-               spaceBetween: 16,
-             },
-        }
-    });
-
+    
     // об'єкт який містить посилання на кнопки та іконки на яких змінюємо класи
     // на місце цих класів '.reviews__btn--prev','.js-review-icon-prev' і т.д повставляйте свої
     const refsOption = {
@@ -53,11 +22,49 @@ window.onload = async () => {
         disabledIconClass: 'reviews__icon--disabled',
         disabledAttribute: 'disabled',
     };
-    
-    // виклик функції та передача аргументів
-    disabledNavigationButtons(swiper, refsOption, classOptions);
-    swiper.on('slideChange', () => disabledNavigationButtons(swiper, refsOption, classOptions));
+
+    renderMarkupReviews(createMarkupReviews, reviews);
+
+    const swiper = new Swiper('.swiper', {
+        keyboard: {
+            enabled: true,
+            onlyInViewport: false,
+        },
+        navigation: {
+            nextEl: '.reviews__btn--next',
+            prevEl: '.reviews__btn--prev',
+        },
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 16,
+            },
+            375: {
+                slidesPerView: 1,
+                spaceBetween: 16,
+            },
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 16,
+            },
+            1440: {
+                slidesPerView: 4,
+                spaceBetween: 16,
+            },
+        },
+
+        // додайте цей код у налантування свого свайперу для відпрацьовування функції
+        on: {
+            init: function () {
+                disabledNavigationButtons(this, refsOption, classOptions);
+            },
+            slideChange: function () {
+                disabledNavigationButtons(this, refsOption, classOptions);
+            },
+        },
+    });
 };
+
 
 function createMarkupReviews(array) {
      return array.map(ar => `
