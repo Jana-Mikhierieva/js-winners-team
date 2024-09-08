@@ -96,7 +96,7 @@ const createItemGalleryTemplate = (imgCover) => {
                 srcset="${imgCover.srcset}" 
                 width="282" 
                 height="163" />
-              <img src="${imgCover.src}" alt="${imgCover.alt}" />
+              <img src="${imgCover.src}" alt="${imgCover.alt}" loading="lazy"/>
             </picture>
           </li>
     `;
