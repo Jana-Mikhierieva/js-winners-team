@@ -1,6 +1,6 @@
 .covers {
   max-width: 375px;
-  height: 508px;
+  height: 670px;
   padding: 82px 0;
   margin-left: auto;
   margin-right: auto;
@@ -9,31 +9,38 @@
   background-position: center;
   background-size: cover;
   background-clip: content-box;
-  overflow: hidden;
 }
 
 .covers-container {
-  position: relative;
 }
 
 .covers-content {
-  position: absolute;
-  right: -3009px;
-  left: 0;
-  bottom: -900px;
+  height: 508px;
+  position: relative;
 }
 
 .covers-gallery {
-  width: calc(282px * 10 + 9 * 21px);
-  transform: rotate(16deg);
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  right: 0;
+  left: 0;
+}
+
+.covers-gallery-row {
   display: flex;
-  flex-wrap: wrap;
   gap: 21px;
+  margin-bottom: 21px;
+  transform: rotate(16deg);
 }
 
 .covers-gallery-item {
-  width: 282px;
-  height: 163px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  white-space: nowrap;
   animation-name: marqueeLine;
   animation-duration: 10s;
   animation-timing-function: ease-in-out;
