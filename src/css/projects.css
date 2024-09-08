@@ -119,6 +119,10 @@
 }
 
 @media screen and (min-width: 768px) {
+  .project-list > .project-item {
+    min-width: 704px;
+  }
+
   .project-item > .project-text {
     min-width: 704px;
     padding: 64px;
@@ -167,6 +171,10 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .project-list > .project-item {
+    min-width: 1376px;
+  }
+
   .projects {
     padding-top: 82px;
     padding-bottom: 82px;
