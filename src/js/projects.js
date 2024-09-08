@@ -1,11 +1,10 @@
-
-import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import Swiper from 'swiper/bundle';
+// import { Navigation, Pagination } from 'swiper/modules';
 // import Swiper from 'swiper/bundle';
 // import 'swiper/css/bundle';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+// import 'swiper/css';
+// import 'swiper/css/navigation';
+// import 'swiper/css/pagination';
 
 // init Swiper:
 // const swiper = new Swiper('.swiper', {
@@ -18,9 +17,19 @@ import 'swiper/css';
 // const swiper = new Swiper();
 
 const swiper = new Swiper('.swiper', {
+  keyboard: {
+    enabled: true,
+    onlyInViewport: false,
+  },
+
+  navigation: {
+    nextEl: '.right-button',
+    prevEl: '.left-button',
+  },
+
   // Optional parameters
   //   direction: 'vertical',
-  loop: true,
+  // loop: true,
 
   // If we need pagination
   //   pagination: {
@@ -28,10 +37,6 @@ const swiper = new Swiper('.swiper', {
   //   },
 
   // Navigation arrows
-  navigation: {
-    nextEl: '.right-button',
-    prevEl: '.left-button',
-  },
 
   // And if we need scrollbar
   //   scrollbar: {
@@ -40,4 +45,3 @@ const swiper = new Swiper('.swiper', {
 });
 
 console.log('Hello!');
-
