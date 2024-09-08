@@ -1,16 +1,16 @@
 import { getReview } from "./api";
 import Swiper from 'swiper/bundle';
 import LazyLoad from "vanilla-lazyload";
+import $ from 'jquery';
+import 'magnific-popup';
+import 'magnific-popup/dist/magnific-popup.css';
 
 const lazyLoadInstance = new LazyLoad({
     elements_selector: ".lazy"
 });
 
-
 const reviewsContainer = document.querySelector('.js-reviews');
 
-// об'єкт який містить посилання на кнопки та іконки на яких змінюємо класи
-// на місце цих класів '.reviews__btn--prev','.js-review-icon-prev' і т.д повставляйте свої
 const refsOption = {
     prevButton: document.querySelector('.reviews__btn--prev'),
     nextButton: document.querySelector('.reviews__btn--next'),
@@ -18,14 +18,11 @@ const refsOption = {
     nextIcon: document.querySelector('.js-review-icon-next'),
 };
 
-// об'єкт який містить атрибут та класи які треба вішати або знімати
-// на місце цих класів 'reviews__btn--disabled','reviews__icon--disabled' і т.д повставляйте свої
 const classOptions = {
     disabledBtnClass: 'reviews__btn--disabled',
     disabledIconClass: 'reviews__icon--disabled',
     disabledAttribute: 'disabled',
 };
-
 
 function initializeSwiper() {
     const swiper = new Swiper('.swiper', {
@@ -55,8 +52,6 @@ function initializeSwiper() {
                 spaceBetween: 16,
             },
         },
-
-        // ці налаштування додайте до свого свайперу щоб відпрацювала імпортована фунуція
         on: {
             init: function () {
                 disabledNavigationButtons(this, refsOption, classOptions);
@@ -65,6 +60,12 @@ function initializeSwiper() {
                 disabledNavigationButtons(this, refsOption, classOptions);
             },
         },
+    });
+
+    // Ініціалізація Magnific Popup
+    $('.open-popup-link').magnificPopup({
+        type: 'inline',
+        midClick: true
     });
 }
 
@@ -76,15 +77,25 @@ window.onload = async () => {
 };
 
 function createMarkupReviews(array) {
-    return array.map(ar => `
+    return array.map((ar, index) => `
         <li class="reviews__item swiper-slide">
-            <img 
-                class="lazy reviews__image"
-                data-src="${ar.avatar_url}" 
-                alt="commentator's photo" 
-            />
-            <h4 class="reviews__title">${ar.author}</h4>
-            <p class="reviews__text">${ar.review}</p>
+            <a href="#review${index}" class="open-popup-link">
+                <img 
+                    class="lazy reviews__image"
+                    data-src="${ar.avatar_url}" 
+                    alt="commentator's photo" 
+                />
+                <h4 class="reviews__title">${ar.author}</h4>
+                <p class="reviews__text">${ar.review}</p>
+            </a>
+            <!-- Hidden popup content -->
+            <div id="review${index}" class="mfp-hide">
+                <img src="${ar.avatar_url}" alt="${ar.author}" class="popup-image" />
+                <div class="popup-content">
+                    <h2>${ar.author}</h2>
+                    <p>${ar.review}</p>
+                </div>
+            </div>
         </li>`).join('');
 }
 
@@ -92,12 +103,6 @@ function renderMarkupReviews(callback, array) {
     reviewsContainer.insertAdjacentHTML('beforeend', callback(array));
 }
 
-// ФУНКЦІЯ ДЛЯ РОБОТИ З КНОПКАМИ ЯКІ ПЕРЕМИКАЮТЬ СВАЙПЕР
-// ІМПОРТУЙТЕ ЇЇ ТА ВИКЛИЧІТЬ ТАМ ДЕ ІНІЦІАЛІЗУЄТЕ СВАЙПЕР
-// ПЕРЕДАЙТЕ ЇЙ ТРИ АРГУМЕНТИ:
-// el-це сам свайпер
-// refsOption-об'єкт який містить посилання на кнопки та іконки на яких змінюємо класи
-// classOptions-об'єкт який містить атрибут та класи які треба вішати
 export function disabledNavigationButtons(el, refsOption, classOptions) {
     const { prevButton, nextButton, prevIcon, nextIcon } = refsOption;
     const { disabledBtnClass, disabledIconClass, disabledAttribute } = classOptions;
