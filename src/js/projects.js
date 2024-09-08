@@ -26,10 +26,10 @@ const swiper = new Swiper('.swiper', {
 
   on: {
     init: function () {
-      disabledNavigationButtons(this, refsOption, classOptions);
+      disabledNavigationButtonsVit(this, refsOption, classOptions);
     },
     slideChange: function () {
-      disabledNavigationButtons(this, refsOption, classOptions);
+      disabledNavigationButtonsVit(this, refsOption, classOptions);
     },
   },
 
@@ -53,7 +53,7 @@ const swiper = new Swiper('.swiper', {
   },
 });
 
-function disabledNavigationButtons(el, refsOption, classOptions) {
+function disabledNavigationButtonsVit(el, refsOption, classOptions) {
   const { prevButton, nextButton, prevIcon, nextIcon } = refsOption;
   const { disabledBtnClass, disabledIconClass, disabledAttribute } =
     classOptions;

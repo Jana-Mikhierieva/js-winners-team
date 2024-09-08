@@ -9,6 +9,10 @@
     clip: rect(0, 0, 0, 0);
 }
 
+.about-me-container {
+    padding-top: 64px;
+}
+
 .first-section-about-me {
     display: flex;
     flex-direction: column;
@@ -175,134 +179,30 @@
     }
     
     .icon-about-me {
-        width: 18px;
-        height: 18px;
+        width: 20px;
+        height: 20px;
     }
     
     /*--------- Triger ---------*/
 
     .ac {
-        background: none !important;
-        border: none !important;
-        padding-bottom: 32px !important;
-    }
-    
-    .ac .ac-trigger {
-        text-transform: uppercase !important;
-    
-        font-weight: 600 !important;
-        font-size: 16px !important;
-        line-height: 150% !important;
-        letter-spacing: -0.02em !important;
-    
-        color: rgba(250, 250, 250, 0.4)!important;
-    }
-    
-
-    .ac-panel-item {
-        padding-top: 8px!important;
-    }
-    
-    .ac-panel-list {
-        display: flex !important;
-        flex-direction: column !important;
-        
-        row-gap: 32px !important;
-    }
-
-    .ac .ac-panel
-    .ac-text {
-        color: #FAFAFA !important;
-        font-weight: 500 !important;
-        font-size: 16px !important;
-        line-height: 150% !important;
-        letter-spacing: -0.02em !important;
-        padding: 0 !important;
-    }
-    
-    .ac {
-        border-bottom: 1px solid rgba(250, 250, 250, 0.2) !important;
-        margin-bottom: 32px !important;
-        margin-top: 0 !important;
-    }
-
-    .ac:last-child {
-        margin-bottom: 0 !important;
-    }
-    
-    .ac .ac-trigger {
-        display: flex!important;
-        justify-content: space-between;
-        align-items: start;
-        padding: 0!important;
-    }
-    
-    .list-roles {
-        display: flex !important;
-        flex-direction: column !important;
-        
-        row-gap: 10px !important;
-        padding-bottom: 32px !important;
-    }
-    
-    .education-list {
-        display: flex !important;
-        flex-direction: column !important;
-       
-        row-gap: 10px !important;
         padding-bottom: 32px !important;
     }
 
-    .education-list-item {
-        max-width: 465px !important;
-    }
-
-    
-
-    .ac .ac-trigger::after {
-        content: ""!important; 
-    }
-
-    .ac.is-active .ac-trigger .icon-about-me {
-        transform: rotate(360deg); 
-    }
-
-    .icon-about-me {
-        box-sizing: content-box;
-        border: 1px solid rgba(250, 250, 250, 0.2);
-        border-radius: 100px;
-        padding: 10px;
-        transform: rotate(180deg);
-        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    }
 }
 
 @media only screen and (min-width: 1440px) {
 
-    .visually-hidden {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        margin: -1px;
-        padding: 0;
-        border: 0;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-    }
-    
     .first-section-about-me {
-        display: flex;
-        column-gap: 16px;
-    
         margin-bottom: 96px;
-    }
-    
-    
-    .text-about-me-container {
-        background-color: #242527;
-        border-radius: 24px;
+        flex-direction: row;
+        column-gap: 16px;
     }
 
+    .about-me-container {
+        padding-top: 96px;
+    }
+    
     .text-about-me {
         width: 552px;
         height: 200px;
@@ -318,122 +218,29 @@
         letter-spacing: -0.06em;
     }
     
-    .color-word-1 {
-        color: #ED3B44;
-    }
-    
-    .color-word-2 {
-        color: rgba(250, 250, 250, 0.4);
-    }
-    
-    .img-about-me {
-        border-radius: 24px;
-    }
-    
     /*--------- Triger ---------*/
     
     .ac {
-        background: none !important;
-        border: none !important;
         padding-bottom: 32px !important;
     }
-    
-    .ac .ac-trigger {
-        text-transform: uppercase !important;
-    
-        font-weight: 600 !important;
-        font-size: 16px !important;
-        line-height: 150% !important;
-        letter-spacing: -0.02em !important;
-    
-        color: rgba(250, 250, 250, 0.4)!important;
+
+    .ac-panel-item {
+        padding-top: 0px!important;
     }
-    
     
     .ac-panel-list {
-        display: flex !important;
-        flex-direction: column !important;
-        
-        row-gap: 32px !important;
-        
         padding-left: 688px !important;
-        
     }
 
-    .no-paddings {
-        padding-bottom: 0px !important;
-    }
-
-    .ac .ac-panel
-    .ac-text {
-        color: #FAFAFA !important;
-        font-weight: 500 !important;
-        font-size: 16px !important;
-        line-height: 150% !important;
-        letter-spacing: -0.02em !important;
-        padding: 0 !important;
-    }
-    
-    .ac {
-        border-bottom: 1px solid rgba(250, 250, 250, 0.2) !important;
-        margin-bottom: 32px !important;
-        margin-top: 0 !important;
-    }
-
-    .ac:last-child {
-        margin-bottom: 0 !important;
-    }
-    
-    .ac .ac-trigger {
-        display: flex!important;
-        justify-content: space-between;
-        align-items: start;
-        padding: 0!important;
-    }
-    
     .list-roles {
-        display: flex !important;
-        flex-direction: column !important;
         padding-left: 688px !important;
-        
-        row-gap: 10px !important;
-        padding-bottom: 32px !important;
     }
     
     .education-list {
-        display: flex !important;
-        flex-direction: column !important;
         padding-left: 688px !important;
-       
-        
-        row-gap: 10px !important;
-        padding-bottom: 32px !important;
-    }
-
-    .education-list-item {
-        max-width: 465px !important;
     }
 
     .ac-panel-item {
         max-width: 612px !important;
     }
-
-    .ac .ac-trigger::after {
-        content: ""!important; 
-    }
-
-    .ac.is-active .ac-trigger .icon-about-me {
-        transform: rotate(360deg); 
-    }
-
-    .icon-about-me {
-        box-sizing: content-box;
-        border: 1px solid rgba(250, 250, 250, 0.2);
-        border-radius: 100px;
-        padding: 10px;
-        transform: rotate(180deg);
-        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    }
 }
-
-
