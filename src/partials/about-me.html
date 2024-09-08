@@ -1,5 +1,110 @@
 <section class="about-me">
-    <div class="container">
-    
+    <div class="container about-me-container">
+        <h1 class="visually-hidden">About me</h1>
+           <div class="first-section-about-me">
+                <div class="text-about-me-container">
+                    <p class="text-about-me">I work with people all over the world to create impressive and <span class="color-word-1">functional</span> <span class="color-word-2">websites</span> that reflect each client's unique personality.</p>
+                </div>
+                <div class="img-about-me-container">
+                    <picture>
+                        <source
+                            srcset="
+                            ../img/img-about/image.about-mob.png 1x,
+                            ../img/img-about/image.about-mob@2x.png 2x"
+                            
+                            media="(max-width: 767px)"
+                        />
+                        <source
+                            srcset="../img/img-about/image.about-tablet.png 1x ,
+                            ../img/img-about/image.about-tablet@2x.png 2x"
+                            
+                            
+                            media="(min-width: 768px)"
+                        />
+                        <source
+                            srcset="../img/img-about/image.about-tablet.png 1x,
+                            ../img/img-about/image.about-tablet@2x.png"
+                            
+                            
+                            media="(min-width: 1440px)"
+                        />
+
+                        <img class="img-about-me" src="../img/img-about/image.about-mob.png" alt="Man free lance">
+                    </picture>
+                    
+                </div>
+           </div>
+           
+           <div class="accordion-container">
+                <!--======== About Me Section =========-->
+                <div class="ac">
+                    <h2 class="ac-header no-paddings">
+                       <button type="button" class="ac-trigger">About me
+                           <svg class="icon-about-me" width="20" height="20">
+                                <use xlink:href="../img/svg/icons-2.svg#icon-Icon-1"></use>
+                           </svg>
+                       </button>
+                    </h2>
+                    <div class="ac-panel">
+                       <ul class="ac-panel-list">
+                           <li class="ac-panel-item">
+                               <p class="ac-text">I am Lloyd Jefferson, a talented programmer with extensive expertise in software development. I have an understanding of different programming languages ​​and technologies, always ready to improve my skills. I always follow the latest trends and look for unconventional, creative solutions to problems. I have a high level of analytical skills and am able to effectively solve even the most difficult tasks encountered on the way.</p>
+                           </li>
+                           <li class="ac-panel-item">
+                               <p class="ac-text">Able to work both independently and in a team. I can effectively cooperate with colleagues, exchanging ideas and finding optimal solutions. Professional maturity allows you to calmly cope with challenges and stressful situations, while maintaining a high quality of work.I am always looking for opportunities for self-improvement. I actively study new technologies and practices to stay abreast of the latest innovations. I have a strong understanding of various programming languages, frameworks and architectural concepts that allow me to create efficient and scalable software.</p>
+                           </li>
+                       </ul>
+                    </div>
+                </div>
+                
+                <!--========= Role Section ===========-->
+                <div class="ac">
+                    <h2 class="ac-header">
+                       <button type="button" class="ac-trigger ac-trigger-border">Role
+                           <svg class="icon-about-me" width="20" height="20">
+                               <use xlink:href="../img/svg/icons-2.svg#icon-Icon-1"></use>
+                           </svg>
+                       </button>
+                    </h2>
+                    <div class="ac-panel">
+                        <ul class="list-roles">
+                            <li class="list-item-role">
+                                <p class="ac-text">Frontend development</p>
+                            </li>
+                            <li class="list-item-role">
+                                <p class="ac-text">HeadlessCMS,Wordpress</p>
+                            </li>
+                            <li class="list-item-role">
+                                <p class="ac-text">Blender(enjoy)</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!--======= Education Section =======-->
+                <div class="ac">
+                    <h2 class="ac-header">
+                       <button type="button" class="ac-trigger ac-trigger-border">Education
+                            <svg class="icon-about-me" width="20" height="20">
+                                <use xlink:href="../img/svg/icons-2.svg#icon-Icon-1"></use>
+                            </svg>
+                       </button>
+                    </h2>
+                    <div class="ac-panel">
+                        <ul class="education-list">
+                            <li class="education-list-item">
+                                <p class="ac-text">2018 - 2019  / Frontend Development Diploma, GoIT IT School, New York</p>
+                            </li>
+                            <li class="education-list-item">
+                                <p class="ac-text">2019 - 2020 / Advanced Web Development Certificate, GoIT IT School, New York</p>
+                            </li>
+                            <li class="education-list-item">
+                                <p class="ac-text">2020 - 2022 / Advanced Blender Animation Techniques, Udemy</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+           </div>
+           <!-- Slider main container -->
     </div>
 </section>
