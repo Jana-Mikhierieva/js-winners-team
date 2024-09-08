@@ -1,0 +1,131 @@
+/* Styles for Mobile devices */
+
+
+@media (min-width: 320px) {
+
+    .benefits {
+    padding-bottom: 32px;
+    padding-top: 32px;
+    }
+    
+    .benefits-title {
+    font-size: 16px;
+    margin-bottom: 32px;
+    }
+    
+    .benefits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    }
+    
+    .benefits-item-container {
+    border-radius: 20px;
+    padding: 24px;
+    max-width: 344px;
+    background-color: #242527;
+    }
+    
+    .benefits-div {
+    display: flex;
+    width: 48px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 64px;
+    border-radius: 10px;
+    background-color: #ed3b44;
+    }
+    
+    .benefits-icon {
+    width: 24px;
+    height: 24px;  
+    }
+    
+    .benefits-heading {
+    font-size: 20px;
+    margin-bottom: 8px;
+    }
+    
+    .benefits-text {
+    color: rgba(250, 250, 250, 0.6);
+    }
+
+    .benefits-button-container {
+        margin-top: 32px;
+    }
+    
+    .benefits-button {
+    border: 1px solid rgba(250, 250, 250, 0.2);
+    border-radius: 60px;
+    padding: 18px 36px;
+    cursor: pointer;
+    background-color: transparent;
+    max-width: 187px;
+    max-height: 55px;
+    text-align: center;
+    }
+
+    .benefits-button:hover{
+        background-color: #242527;
+    }
+    }
+    
+    
+    /* Styles for Tablet devices */
+    
+    
+    @media (min-width: 768px) {
+    .benefits {
+    padding-bottom: 48px;
+    padding-top: 48px;
+    }
+    
+    .benefits-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    }
+    
+    .benefits-button-container {
+        margin-top: 64px;
+    }
+    
+    .benefits-button {
+    margin-top: 64px;
+    }
+    }
+    
+    
+    /* Styles for Desktop devices */
+    
+    
+    @media (min-width: 1440px) {
+    .benefits {
+    padding-bottom: 82px;
+    padding-top: 82px;
+    }
+    
+    .benefits-list-container{
+    flex-wrap: wrap;
+    display: flex;
+    max-width: 680px;
+    margin-left: auto;
+    }
+    
+    .benefits-list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(332px, 1fr));
+    gap: 16px;
+    }
+    
+    .benefits-button-container {
+    max-width: 680px;
+    }
+    
+    .benefits-item-container {
+        max-width: 332px;
+        max-height: 270px;
+    }
+    }
+    

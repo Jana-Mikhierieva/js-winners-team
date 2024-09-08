@@ -1,23 +1,23 @@
-<section class="work-together__section">
+<section class="work-together__section" id="work-together">
   <div class="container">
     <div class="work-together__wrapper">
       <picture>
         <source
           srcset="
-            ../img/img-together/image.together-mob.png    1x,
-            ../img/img-together/image.together-mob@2x.png 2x
+            ./img/img-together/image.together-mob.png    1x,
+            ./img/img-together/image.together-mob@2x.png 2x
           "
           media="(max-width: 767px)"
         />
         <source
           srcset="
-            ../img/img-together/image.together-desk-lap.png    1x,
-            ../img/img-together/image.together-desk-lap@2x.png 2x
+            ./img/img-together/image.together-desk-lap.png    1x,
+            ./img/img-together/image.together-desk-lap@2x.png 2x
           "
           media="(min-width: 768px)"
         />
         <img
-          src="../img/img-together/image.together-mob.png"
+          src="./img/img-together/image.together-mob.png"
           alt="Fullstack developer Lloyd Jefferson"
           class="work-together__img"
         />
@@ -28,17 +28,23 @@
       </h2>
     </div>
     <h2 class="work-together__header">together</h2>
-    <form class="work-together__form">
+    <form class="work-together__form js-work-form">
       <div class="work-together__form-wrapper">
-        <input
-          class="work-together__input"
-          type="email"
-          placeholder="clients@gmail.com"
-          pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
-        />
+        <label class="visually-hidden" for="email">Email</label>
+        <div class="work-together__email-wrapper">
+          <input
+            class="work-together__input"
+            type="email"
+            name="email"
+            placeholder="clients@gmail.com"
+          />
+          <span class="email-validation-message"></span>
+        </div>
+        <label class="visually-hidden" for="comment">Comment</label>
         <input
           class="work-together__input"
           type="text"
+          name="comment"
           placeholder="comments"
         />
       </div>

@@ -1,18 +1,64 @@
-.reviews{}
+.reviews{
+     padding-top: 96px;
+     padding-bottom: 68px;
+}
 
-.reviews__heading{}
 
-.reviews__list{}
+.reviews__heading{
+	line-height: 24px;
+	letter-spacing: 0.02em;
+	margin-bottom: 24px;
+}
 
-.reviews__item{}
+.reviews__list{
+	margin-bottom: 32px;
+}
 
-.reviews__image{}
+.reviews__item {
+	height: 302px;
+	overflow: hidden;
+	padding: 32px 24px 32px 24px;
+	border: 1px solid #FAFAFA33;
+	border-radius: 20px;
+}
 
-.reviews__title{}
+.reviews__image{
+	width: 48px;
+	height: 48px;
+	border-radius: 10px;
+	margin-bottom: 24px;
+}
 
-.reviews__text{}
+.reviews__title{
+	font-size: 20px;
+	line-height: 30px;
+	letter-spacing: 0.02em;
+	text-align: left;
+	margin-bottom: 8px;
+}
 
-.reviews__buttons{}
+.reviews__text {
+	height: 120px;
+	overflow-y: auto;
+	scrollbar-width: none;
+
+	/* Приховую скролбар у Firefox */
+	-ms-overflow-style: none;
+	/* Приховую скролбар у IE і Edge */
+		font-weight: 500;
+		line-height: 24px;
+		letter-spacing: 0.02em;
+		text-align: left;
+}
+
+.reviews__text::-webkit-scrollbar {
+	width: 0px;
+}
+
+.reviews__buttons{
+	display: flex;
+	justify-content: center;
+}
 
 .reviews__btn{
 	background-color: transparent;
@@ -21,10 +67,36 @@
 	padding: 18px;
 }
 
-.reviews__disabled {
+.reviews__btn--left{
+	margin-right: 20px;
+}
+
+ .reviews__btn--disabled{
 	border-color: #FAFAFA33;
+}
+
+ .reviews__icon {
+	fill: none;
+	stroke:#FAFAFA80 ;
+}
+
+.reviews__icon--right {
+	transform: rotate(180deg);
+}
+
+.reviews__icon--disabled {
+	stroke:#FAFAFA33 ;
 }
 
 .reviews__error{
 	display: none;
+}
+
+.reviews__error--text{
+	color: #ED3B44;
+	font-weight: 600;
+	font-size: 48px;
+	line-height: 48px;
+	letter-spacing: 0.04em;
+	text-align: center;
 }
