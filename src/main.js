@@ -2,6 +2,7 @@
 // import Accordion from 'accordion-js';
 // import iziToast from "izitoast";
 // import Swiper from 'swiper';
+import './js/lazy';
 import './js/about-me';
 import './js/covers';
 import './js/faq';
