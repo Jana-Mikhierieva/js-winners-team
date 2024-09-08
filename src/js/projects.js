@@ -1,20 +1,17 @@
 import Swiper from 'swiper/bundle';
-// import { Navigation, Pagination } from 'swiper/modules';
-// import Swiper from 'swiper/bundle';
-// import 'swiper/css/bundle';
-// import 'swiper/css';
-// import 'swiper/css/navigation';
-// import 'swiper/css/pagination';
 
-// init Swiper:
-// const swiper = new Swiper('.swiper', {
-//   // configure Swiper to use modules
-//   modules: [Navigation, Pagination],
-// });
+const refsOption = {
+  prevButton: document.querySelector('.left-button'),
+  nextButton: document.querySelector('.right-button'),
+  prevIcon: document.querySelector('.left-icon'),
+  nextIcon: document.querySelector('.right-icon'),
+};
 
-import 'swiper/css';
-
-// const swiper = new Swiper();
+const classOptions = {
+  disabledBtnClass: 'button-disabled-projects',
+  disabledIconClass: 'icon-disabled',
+  disabledAttribute: 'disabled',
+};
 
 const swiper = new Swiper('.swiper', {
   keyboard: {
@@ -27,21 +24,61 @@ const swiper = new Swiper('.swiper', {
     prevEl: '.left-button',
   },
 
-  // Optional parameters
-  //   direction: 'vertical',
-  // loop: true,
+  on: {
+    init: function () {
+      disabledNavigationButtons(this, refsOption, classOptions);
+    },
+    slideChange: function () {
+      disabledNavigationButtons(this, refsOption, classOptions);
+    },
+  },
 
-  // If we need pagination
-  //   pagination: {
-  //     el: '.swiper-pagination',
-  //   },
-
-  // Navigation arrows
-
-  // And if we need scrollbar
-  //   scrollbar: {
-  //     el: '.swiper-scrollbar',
-  //   },
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 16,
+    },
+    375: {
+      slidesPerView: 1,
+      spaceBetween: 16,
+    },
+    768: {
+      slidesPerView: 1,
+      spaceBetween: 16,
+    },
+    1440: {
+      slidesPerView: 1,
+      spaceBetween: 16,
+    },
+  },
 });
 
-console.log('Hello!');
+function disabledNavigationButtons(el, refsOption, classOptions) {
+  const { prevButton, nextButton, prevIcon, nextIcon } = refsOption;
+  const { disabledBtnClass, disabledIconClass, disabledAttribute } =
+    classOptions;
+
+  const toggleClass = (element, condition, className) => {
+    condition
+      ? element.classList.add(className)
+      : element.classList.remove(className);
+  };
+
+  const toggleAttribute = (element, condition, attrName) => {
+    condition
+      ? element.setAttribute(attrName, 'true')
+      : element.removeAttribute(attrName);
+  };
+
+  toggleClass(prevButton, el.isBeginning, disabledBtnClass);
+  toggleClass(prevIcon, el.isBeginning, disabledIconClass);
+  toggleAttribute(prevButton, el.isBeginning, disabledAttribute);
+
+  toggleClass(nextButton, el.isEnd, disabledBtnClass);
+  toggleClass(nextIcon, el.isEnd, disabledIconClass);
+  toggleAttribute(nextButton, el.isEnd, disabledAttribute);
+}
+
+refsOption.nextButton.disabled = false;
+refsOption.nextButton.classList.remove('button-disabled-projects');
+refsOption.nextIcon.classList.remove('icon-disabled');
