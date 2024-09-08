@@ -57,7 +57,6 @@ window.onload = async () => {
     });
 	
 	swiper.init();
-	
     function disabledNavigationButtons() {
         const prevButton = document.querySelector('.js-swiper-prev');
         const nextButton = document.querySelector('.js-swiper-next');
