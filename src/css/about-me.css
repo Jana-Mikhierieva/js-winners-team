@@ -9,6 +9,10 @@
     clip: rect(0, 0, 0, 0);
 }
 
+.about-me-container {
+    padding-top: 64px;
+}
+
 .first-section-about-me {
     display: flex;
     flex-direction: column;
@@ -193,6 +197,10 @@
         margin-bottom: 96px;
         flex-direction: row;
         column-gap: 16px;
+    }
+
+    .about-me-container {
+        padding-top: 96px;
     }
     
     .text-about-me {
