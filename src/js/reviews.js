@@ -3,28 +3,25 @@ import Swiper from 'swiper/bundle';
 
 const reviewsContainer = document.querySelector('.js-reviews');
 
-window.onload = async () => {
-    const reviews = await getReview();
-    
-    // об'єкт який містить посилання на кнопки та іконки на яких змінюємо класи
-    // на місце цих класів '.reviews__btn--prev','.js-review-icon-prev' і т.д повставляйте свої
-    const refsOption = {
-        prevButton: document.querySelector('.reviews__btn--prev'),
-        nextButton: document.querySelector('.reviews__btn--next'),
-        prevIcon: document.querySelector('.js-review-icon-prev'),
-        nextIcon: document.querySelector('.js-review-icon-next'),
-    };
-    
-    // об'єкт який містить атрибут та класи які треба вішати або знімати
-    // на місце цих класів 'reviews__btn--disabled','reviews__icon--disabled' і т.д повставляйте свої
-    const classOptions = {
-        disabledBtnClass: 'reviews__btn--disabled',
-        disabledIconClass: 'reviews__icon--disabled',
-        disabledAttribute: 'disabled',
-    };
+// об'єкт який містить посилання на кнопки та іконки на яких змінюємо класи
+// на місце цих класів '.reviews__btn--prev','.js-review-icon-prev' і т.д повставляйте свої
+const refsOption = {
+    prevButton: document.querySelector('.reviews__btn--prev'),
+    nextButton: document.querySelector('.reviews__btn--next'),
+    prevIcon: document.querySelector('.js-review-icon-prev'),
+    nextIcon: document.querySelector('.js-review-icon-next'),
+};
 
-    renderMarkupReviews(createMarkupReviews, reviews);
+// об'єкт який містить атрибут та класи які треба вішати або знімати
+// на місце цих класів 'reviews__btn--disabled','reviews__icon--disabled' і т.д повставляйте свої
+const classOptions = {
+    disabledBtnClass: 'reviews__btn--disabled',
+    disabledIconClass: 'reviews__icon--disabled',
+    disabledAttribute: 'disabled',
+};
 
+
+function initializeSwiper() {
     const swiper = new Swiper('.swiper', {
         keyboard: {
             enabled: true,
@@ -53,7 +50,7 @@ window.onload = async () => {
             },
         },
 
-        // додайте цей код у налантування свого свайперу для відпрацьовування функції
+        // ці налаштування додайте до свого свайперу щоб відпрацювала імпортована фунуція
         on: {
             init: function () {
                 disabledNavigationButtons(this, refsOption, classOptions);
@@ -63,20 +60,25 @@ window.onload = async () => {
             },
         },
     });
+}
+
+window.onload = async () => {
+    const reviews = await getReview();
+    renderMarkupReviews(createMarkupReviews, reviews);
+    initializeSwiper();
 };
 
-
 function createMarkupReviews(array) {
-     return array.map(ar => `
-      <li class="reviews__item swiper-slide">
-        <img 
-          class="reviews__image" 
-          src="${ar.avatar_url}" 
-          alt="commentator's photo" 
-        />
-        <h4 class="reviews__title">${ar.author}</h4>
-        <p class="reviews__text">${ar.review}</p>
-      </li>`).join('');
+    return array.map(ar => `
+        <li class="reviews__item swiper-slide">
+            <img 
+                class="reviews__image" 
+                src="${ar.avatar_url}" 
+                alt="commentator's photo" 
+            />
+            <h4 class="reviews__title">${ar.author}</h4>
+            <p class="reviews__text">${ar.review}</p>
+        </li>`).join('');
 }
 
 function renderMarkupReviews(callback, array) {
