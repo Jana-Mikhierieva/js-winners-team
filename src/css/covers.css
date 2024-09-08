@@ -1,5 +1,58 @@
+.covers {
+  max-width: 375px;
+  height: 670px;
+  padding: 82px 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url('/img/background/elements-vectors.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-clip: content-box;
+}
+
+.covers-container {
+}
+
+.covers-content {
+  height: 508px;
+  position: relative;
+}
+
 .covers-gallery {
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  right: 0;
+  left: 0;
+}
+
+.covers-gallery-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 50px;
+  gap: 21px;
+  margin-bottom: 21px;
+  transform: rotate(16deg);
+}
+
+.covers-gallery-item {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  white-space: nowrap;
+  animation-name: marqueeLine;
+  animation-duration: 10s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes marqueeLine {
+  from {
+    transform: translateX(-20%);
+  }
+
+  to {
+    transform: translateX(-900%);
+  }
 }

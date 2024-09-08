@@ -20,6 +20,7 @@
     "accordion-js": "^3.3.4",
     "axios": "^1.7.7",
     "izitoast": "^1.4.0",
+    "jquery": "^3.7.1",
     "magnific-popup": "^1.2.0",
     "modern-normalize": "^3.0.1",
     "swiper": "^11.1.12",
