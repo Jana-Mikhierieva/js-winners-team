@@ -1,5 +1,11 @@
 import { getReview } from "./api";
-import Swiper from 'swiper/bundle'; 
+import Swiper from 'swiper/bundle';
+import LazyLoad from "vanilla-lazyload";
+
+const lazyLoadInstance = new LazyLoad({
+    elements_selector: ".lazy"
+});
+
 
 const reviewsContainer = document.querySelector('.js-reviews');
 
@@ -66,14 +72,15 @@ window.onload = async () => {
     const reviews = await getReview();
     renderMarkupReviews(createMarkupReviews, reviews);
     initializeSwiper();
+    lazyLoadInstance.update();
 };
 
 function createMarkupReviews(array) {
     return array.map(ar => `
         <li class="reviews__item swiper-slide">
             <img 
-                class="reviews__image" 
-                src="${ar.avatar_url}" 
+                class="lazy reviews__image"
+                data-src="${ar.avatar_url}" 
                 alt="commentator's photo" 
             />
             <h4 class="reviews__title">${ar.author}</h4>
