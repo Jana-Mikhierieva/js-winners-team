@@ -101,54 +101,65 @@
 	text-align: center;
 }
 
-
-
-/* Загальний стиль для попапу */
 .mfp-hide {
 	display: none;
 }
 
-/* Стиль для зображення у попапі */
-.popup-image {
-	max-width: 80%;
-	/* Обмеження максимального розміру зображення */
-	height: auto;
-	/* Зберігає пропорції зображення */
-	display: block;
-	margin: 0 auto;
-	/* Вирівнює зображення по центру */
+/* Стилі для бекдропу */
+.mfp-bg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.8);
+	z-index: 1042;
 }
 
-/* Стиль для контейнера з контентом у попапі */
-.popup-content {
-	background-color: white;
-	/* Білий фон для текстового контенту */
+.popup-container {
+	background-color: #e0373f;
 	padding: 20px;
-	/* Відступи всередині контейнера */
-	max-width: 600px;
-	/* Максимальна ширина текстового контенту */
+	width: 100%;
 	margin: 0 auto;
-	/* Центрує контейнер по горизонталі */
+	border-radius: 10px;
 	text-align: center;
-	/* Вирівнює текст по центру */
-	border-radius: 8px;
-	/* Закруглені кути */
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	/* Легкий тіньовий ефект */
+	position: relative;
+}
+@media (min-width: 768px) {
+	.popup-container {
+	
+		max-width: 800px;
+	}
 }
 
-/* Заголовок у попапі */
+.mfp-close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background: none;
+	border: none;
+	font-size: 24px;
+	color: #ffffff !important;
+	cursor: pointer;
+}
+
+.popup-image {
+	max-width: 50%;
+	height: auto;
+	display: block;
+	margin: 0 auto 15px auto;
+	border-radius: 10px;
+}
+
 .popup-content h2 {
+	color: #ffffff;
 	margin-top: 0;
-	/* Вирівнює заголовок */
 	margin-bottom: 15px;
-	/* Відступ знизу */
+	letter-spacing: 0.04em;
 }
 
-/* Текст у попапі */
 .popup-content p {
+	color: #ffffff;
 	margin: 0;
-	/* Видаляє відступи з усіх боків */
-	line-height: 1.6;
-	/* Міжрядковий інтервал для покращення читабельності */
+	letter-spacing: 0.03em;
 }

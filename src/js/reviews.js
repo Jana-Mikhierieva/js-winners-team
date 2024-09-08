@@ -3,7 +3,6 @@ import Swiper from 'swiper/bundle';
 import LazyLoad from "vanilla-lazyload";
 import $ from 'jquery';
 import 'magnific-popup';
-import 'magnific-popup/dist/magnific-popup.css';
 
 const lazyLoadInstance = new LazyLoad({
     elements_selector: ".lazy"
@@ -90,14 +89,19 @@ function createMarkupReviews(array) {
             </a>
             <!-- Hidden popup content -->
             <div id="review${index}" class="mfp-hide">
-                <img src="${ar.avatar_url}" alt="${ar.author}" class="popup-image" />
-                <div class="popup-content">
-                    <h2>${ar.author}</h2>
-                    <p>${ar.review}</p>
+                <div class="popup-container">
+                    <button class="mfp-close">&times;</button> <!-- Хрестик для закриття -->
+                    <img src="${ar.avatar_url}" alt="${ar.author}" class="popup-image" />
+                    <div class="popup-content">
+                        <h2>${ar.author}</h2>
+                        <p>${ar.review}</p>
+                    </div>
                 </div>
             </div>
         </li>`).join('');
 }
+
+
 
 function renderMarkupReviews(callback, array) {
     reviewsContainer.insertAdjacentHTML('beforeend', callback(array));
