@@ -1,7 +1,8 @@
 .faq {
   display: flex;
   flex-direction: column;
-  padding-bottom: 64px;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 .faq-title {
@@ -38,10 +39,14 @@
   display: block;
 }
 .faq-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #1c1d20;
   color: #fafafa;
   border: 1px solid;
-  border-radius: 50%;
+  border-radius: 100px;
   border-color: #fafafa33;
   padding: 7px;
   width: 34px;
@@ -56,7 +61,7 @@
 .faq-arrow {
   stroke: #fafafa;
   transform: rotate(0deg);
-  transition: transform 0.3s ease;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .faq-arrow.rotate {
@@ -65,16 +70,17 @@
 
 @media (min-width: 768px) {
   .faq {
-    padding-bottom: 96px;
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
 
-  .faq-title {
+  /* .faq-title {
     margin: 0;
   }
 
   .faq-list {
     margin: 0;
-  }
+  } */
 
   .faq-item {
     gap: 26px;
@@ -104,7 +110,8 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    padding-bottom: 164px;
+    padding-top: 82px;
+    padding-bottom: 82px;
   }
 
   .faq-list {

@@ -12,6 +12,14 @@ document.addEventListener('DOMContentLoaded', function () {
     triggerClass: 'faq-btn',
     panelClass: 'faq-box-answer',
     headerClass: 'faq-item-title',
+    beforeOpen: currElement => {
+      const answerPanel = currElement.querySelector('.faq-box-answer');
+      answerPanel.style.display = 'block';
+    },
+    beforeClose: currElement => {
+      const answerPanel = currElement.querySelector('.faq-box-answer');
+      answerPanel.style.display = 'none';
+    },
   });
 });
 
@@ -23,10 +31,3 @@ sectors.forEach(sector => {
     arrow.classList.toggle('rotate');
   });
 });
-
-// faqButtons.forEach(button => {
-//   button.addEventListener('click', function () {
-//     const parent = this.closest('.faq-box-question');
-//     parent.classList.toggle('active');
-//   });
-// });
