@@ -86,7 +86,7 @@ const imgCovers = [
 // Функція для створення шаблону елемента
 const createItemGalleryTemplate = (imgCover) => {
     return `
-    <li class="covers-gallery-item">
+         <li class="covers-gallery-item">
             <picture class="covers-img">
               <source media="(min-width: 768px)"
                 srcset="${imgCover.srcset}" 
@@ -102,29 +102,51 @@ const createItemGalleryTemplate = (imgCover) => {
     `;
 };
 
-// Функція для генерації необхідної кількості елементів
-const createGalleryItems = (items, numberOfItems) => {
-  const repeatedItems = [];
-  for (let i = 0; i < numberOfItems; i++) {
-    repeatedItems.push(createItemGalleryTemplate(items[i % items.length]));
-  }
-  return repeatedItems.join('');
+// Функція для створення рядка галереї з 10 елементів
+const createGalleryRowTemplate = (items) => {
+  const galleryRowItems = items.map(createItemGalleryTemplate).join('');
+  return `
+    <ul class="covers-gallery-row">
+      ${galleryRowItems}
+    </ul>
+  `;
 };
 
-// Функція для визначення типу пристрою
+// Функція для генерації необхідної кількості рядків галереї
+const createGalleryRows = (items, numberOfRows) => {
+  const rows = [];
+  const itemsPerRow = 10;
+
+  for (let i = 0; i < numberOfRows; i++) {
+    const startIndex = i * itemsPerRow;
+    const rowItems = items.slice(startIndex, startIndex + itemsPerRow);
+    rows.push(createGalleryRowTemplate(rowItems));
+  }
+
+  return rows.join('');
+};
+
+// Функція для визначення типу пристрою та генерації галереї
 const loadGalleryBasedOnDevice = () => {
-  const width = window.innerWidth;
+  const width = document.documentElement.clientWidth;
 
-  let numberOfItems = 40
-    if (width >= 1024) {
-        numberOfItems = 50; // Desktop
-    }
+  let numberOfRows = 4; // Mobile та tablet за замовчуванням
 
-  const galleryItemsTemplate = createGalleryItems(imgCovers, numberOfItems);
+  if (width >= 1024) {
+    numberOfRows = 5; // Для desktop
+  }
+
+
+  const galleryItems = [];
+  for (let i = 0; i < numberOfRows * 10; i++) {
+    galleryItems.push(imgCovers[i % imgCovers.length]);
+  }
+
+  const galleryRowsTemplate = createGalleryRows(galleryItems, numberOfRows);
 
   const coversGalleryEl = document.querySelector('.covers-gallery-js');
   if (coversGalleryEl) {
-    coversGalleryEl.innerHTML = galleryItemsTemplate;
+    coversGalleryEl.innerHTML = galleryRowsTemplate;
   }
 };
 
