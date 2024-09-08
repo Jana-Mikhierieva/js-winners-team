@@ -164,7 +164,7 @@ window.addEventListener('resize', loadGalleryBasedOnDevice);
 const startAnimation = () => {
   const coversGalleryItemsEl = document.querySelectorAll('.covers-gallery-item');
   coversGalleryItemsEl.forEach(item => {
-    item.style.animationPlayState = 'running'; // Запускаємо анімацію
+    item.style.animationPlayState = 'running';
   });
 };
 
@@ -172,14 +172,14 @@ const startAnimation = () => {
 const stopAnimation = () => {
   const coversGalleryItems = document.querySelectorAll('.covers-gallery-item');
   coversGalleryItems.forEach(item => {
-    item.style.animationPlayState = 'paused'; // Зупиняємо анімацію
+    item.style.animationPlayState = 'paused';
   });
 };
 
 // Налаштування Intersection Observer
 const observerOpion = {
   root: null,
-  threshold: 0.18,
+  threshold: 0.1,
 };
 
 const observerCallBack = entries => {
@@ -187,7 +187,7 @@ const observerCallBack = entries => {
     if (entry.isIntersecting) {
       startAnimation(); // Запускаємо анімацію
     } else {
-      stopAnimation(); // Зупиняємо анімацію, коли елемент виходить з viewport'а
+      stopAnimation(); // Зупиняємо анімацію, коли елемент виходить з viewport
     }
   });
 };
