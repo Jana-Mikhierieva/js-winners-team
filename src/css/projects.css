@@ -12,12 +12,14 @@
 }
 
 .project-list > .project-item {
+  min-width: 188px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
 .project-item > .project-text {
+  min-width: 188px;
   background-color: #fafafa;
   border-radius: 24px 24px 0 0;
   padding: 32px;
