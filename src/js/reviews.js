@@ -4,12 +4,15 @@ import LazyLoad from "vanilla-lazyload";
 import $ from 'jquery';
 import 'magnific-popup';
 
-const lazyLoadInstance = new LazyLoad({
-    elements_selector: ".lazy"
+// Ініціалізація бібліотеки vanilla-lazyload
+const  loadingDeferredInstance = new LazyLoad({
+    elements_selector: ".lazy__load"
 });
 
+// Отримання посилання на контейнер у якому відрендериться відповідь з бекенду
 const reviewsContainer = document.querySelector('.js-reviews');
 
+// Об'єкт налаштувань з посиланнями на елементи які треба відслідковувати для зміни класу для функції disabledNavigationButtons
 const refsOption = {
     prevButton: document.querySelector('.reviews__btn--prev'),
     nextButton: document.querySelector('.reviews__btn--next'),
@@ -17,13 +20,17 @@ const refsOption = {
     nextIcon: document.querySelector('.js-review-icon-next'),
 };
 
+// Об'єкт налаштувань з класами які треба змінювати на елементах у функції disabledNavigationButtons
 const classOptions = {
     disabledBtnClass: 'reviews__btn--disabled',
     disabledIconClass: 'reviews__icon--disabled',
     disabledAttribute: 'disabled',
 };
 
+// Функція ініціалізаціі
 function initializeSwiper() {
+
+    // Ініціалізація свайпера
     const swiper = new Swiper('.swiper', {
         keyboard: {
             enabled: true,
@@ -58,29 +65,42 @@ function initializeSwiper() {
             slideChange: function () {
                 disabledNavigationButtons(this, refsOption, classOptions);
             },
+            reachBeginning: function () {
+                disabledNavigationButtons(this, refsOption, classOptions);
+            },
+            reachEnd: function () {
+                disabledNavigationButtons(this, refsOption, classOptions);
+            },
         },
     });
-
-    // Ініціалізація Magnific Popup
+    // Ініціалізація магніфікПопап
     $('.open-popup-link').magnificPopup({
         type: 'inline',
         midClick: true
     });
 }
 
+// Метод який відпрацює після того як будуть завантажені стилі,html і т.д
 window.onload = async () => {
+
+    // Виклик запиту на сервер
     const reviews = await getReview();
-    renderMarkupReviews(createMarkupReviews, reviews);
+    // Виклик функції яка відмальовує розмітку з відповіддю з сервера 
+    createMarkupReviews(renderMarkupReviews, reviews);
+    // Виклик функції яка ініціалізує свайпер та магніфікПопап
     initializeSwiper();
-    lazyLoadInstance.update();
+    // Виклик методу бібліотеки vanilla-lazyload який оновлює її ініціалізацію після рендеру
+    loadingDeferredInstance.update();
 };
 
-function createMarkupReviews(array) {
+
+// Функція яка рендерить розмітку
+function renderMarkupReviews(array) {
     return array.map((ar, index) => `
         <li class="reviews__item swiper-slide">
             <a href="#review${index}" class="open-popup-link">
                 <img 
-                    class="lazy reviews__image"
+                    class="lazy__load reviews__image"
                     data-src="${ar.avatar_url}" 
                     alt="commentator's photo" 
                 />
@@ -91,7 +111,7 @@ function createMarkupReviews(array) {
             <div id="review${index}" class="mfp-hide">
                 <div class="popup-container">
                     <button class="mfp-close">&times;</button> <!-- Хрестик для закриття -->
-                    <img src="${ar.avatar_url}" alt="${ar.author}" class="popup-image" />
+                    <img data-src="${ar.avatar_url}" alt="${ar.author}" class="popup-image lazy__load" />
                     <div class="popup-content">
                         <h2>${ar.author}</h2>
                         <p>${ar.review}</p>
@@ -101,29 +121,31 @@ function createMarkupReviews(array) {
         </li>`).join('');
 }
 
-
-
-function renderMarkupReviews(callback, array) {
+// Функція яка відмальовує розмітку
+function createMarkupReviews(callback, array) {
     reviewsContainer.insertAdjacentHTML('beforeend', callback(array));
 }
 
-export function disabledNavigationButtons(el, refsOption, classOptions) {
+// Функція яка змінює клас та атрибут на кнопках для свайпера
+function disabledNavigationButtons(swiper, refsOption, classOptions) {
     const { prevButton, nextButton, prevIcon, nextIcon } = refsOption;
     const { disabledBtnClass, disabledIconClass, disabledAttribute } = classOptions;
+
+    const isBeginning = swiper.isBeginning;
+    const isEnd = swiper.isEnd;
 
     const toggleClass = (element, condition, className) => {
         condition ? element.classList.add(className) : element.classList.remove(className);
     };
-
     const toggleAttribute = (element, condition, attrName) => {
         condition ? element.setAttribute(attrName, 'true') : element.removeAttribute(attrName);
     };
 
-    toggleClass(prevButton, el.isBeginning, disabledBtnClass);
-    toggleClass(prevIcon, el.isBeginning, disabledIconClass);
-    toggleAttribute(prevButton, el.isBeginning, disabledAttribute);
+    toggleClass(prevButton, isBeginning, disabledBtnClass);
+    toggleClass(prevIcon, isBeginning, disabledIconClass);
+    toggleAttribute(prevButton, isBeginning, disabledAttribute);
 
-    toggleClass(nextButton, el.isEnd, disabledBtnClass);
-    toggleClass(nextIcon, el.isEnd, disabledIconClass);
-    toggleAttribute(nextButton, el.isEnd, disabledAttribute);
+    toggleClass(nextButton, isEnd, disabledBtnClass);
+    toggleClass(nextIcon, isEnd, disabledIconClass);
+    toggleAttribute(nextButton, isEnd, disabledAttribute);
 }
