@@ -2,8 +2,6 @@
 
 import Accordion from 'accordion-js';
 
-import Swiper from 'swiper/bundle'; 
-
 
 const accordion = new Accordion('.accordion-container', {
     duration: 400,
@@ -26,4 +24,3 @@ document.querySelectorAll(`.ac-trigger`).forEach(el => {
         content.style.maxHeight = content.scrollHeight + 'px';
     })
 });
-

@@ -1,7 +1,3 @@
-// import axios from 'axios';
-// import Accordion from 'accordion-js';
-// import iziToast from "izitoast";
-// import Swiper from 'swiper';
 import './js/lazy';
 import './js/about-me';
 import './js/covers';
@@ -12,3 +8,4 @@ import './js/modal-window';
 import './js/projects';
 import './js/reviews';
 import './js/work-together';
+import './js/swiper-about';
