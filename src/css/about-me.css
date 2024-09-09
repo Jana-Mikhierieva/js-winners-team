@@ -148,14 +148,12 @@
     max-width: 465px !important;
 }
 
-
-
 .ac .ac-trigger::after {
     content: ""!important; 
 }
 
 .ac.is-active .ac-trigger .icon-about-me {
-    transform: rotate(360deg); 
+    transform: rotate(180deg); 
 }
 /* ----------Slider------------ */
 .about-wrapper {
@@ -198,9 +196,7 @@
     opacity: 1 !important;
 
 }
-.right-arrow {
-    transform: rotate(180deg);
-}
+
 .swiper-slide-active.custom-slide.swiper-item {
     background-color: #ed3b44;
 }
