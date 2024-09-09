@@ -3,17 +3,18 @@ import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 
 const swiper = new Swiper('.swiper', {
-    speed: 400,
+    speed: 500,
     slidesPerView: 6,
     direction: 'horizontal',
     loop: true,
-    loopedSlides: 6,
+    loopedSlides: 18,
     navigation: {
         nextEl: '.custom-next',
     },
     keyboard: {
-    enabled: true,
-    onlyInViewport: false,
+        enabled: true,
+        onlyInViewport: true,
+        pageUpDown: true,
     },
     breakpoints: {
             320: {
