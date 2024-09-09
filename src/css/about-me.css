@@ -11,6 +11,7 @@
 
 .about-me-container {
     padding-top: 64px;
+    padding-bottom: 32px;
 }
 
 .first-section-about-me {
@@ -156,7 +157,61 @@
 .ac.is-active .ac-trigger .icon-about-me {
     transform: rotate(360deg); 
 }
+/* ----------Slider------------ */
+.about-wrapper {
+    display: flex;
+    align-items: center;
+    /* gap: 55px; */
+    width: 343px;
+    min-width: 0;
+    padding-top: 32px;
+    margin: auto;
+}
 
+.swiper.about-swiper {
+    width: 260px;
+    height: 130px;
+}
+
+.swiper-slide.swiper-item {
+    border-radius: 50%;
+    border: 1px solid rgba(170, 164, 164, 0.2);
+    width: 130px !important;
+    height: 130px !important;
+    margin-right: 0 !important;
+}
+.swiper-slide.custom-slide.swiper-item {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.custom-next {
+    display: block;
+    margin-left: 55px;
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    fill: none;
+    stroke: #3b3b3b;
+    stroke-width: 2px;
+    opacity: 1 !important;
+
+}
+.right-arrow {
+    transform: rotate(180deg);
+}
+.swiper-slide-active.custom-slide.swiper-item {
+    background-color: #ed3b44;
+}
+.skill {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    color: #fafafa;
+}
+/* --------tablet----------- */
 @media only screen and (min-width: 768px) {
     
     .first-section-about-me {
@@ -188,9 +243,28 @@
     .ac {
         padding-bottom: 32px !important;
     }
-
+    .about-wrapper {
+        width: 704px;
+        padding-top: 64px;
+    }
+    .swiper.about-swiper {
+    width: 600px;
+    height: 205px;
+    }
+    .swiper-slide.swiper-item {
+        width: 200px !important;
+        height: 200px !important;
+    }
+    .custom-next {
+        margin-left: 64px;
+        width: 40px;
+        height: 40px;
+    }
+    .skill {
+        font-size: 20px;
+    }
 }
-
+/* --------laptop----------- */
 @media only screen and (min-width: 1440px) {
 
     .first-section-about-me {
@@ -243,4 +317,18 @@
     .ac-panel-item {
         max-width: 612px !important;
     }
+    .about-wrapper {
+        padding-top: 96px;
+        width: 1312px;
+    }
+    .swiper.about-swiper {
+    width: 1200px;
+    }
+    .custom-next {
+        margin-left: 72px;
+    }
+    /* .swiper-button-lock {
+    pointer-events: auto !important;
+    opacity: 1 !important; 
+} */
 }
