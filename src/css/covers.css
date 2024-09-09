@@ -41,6 +41,7 @@
   animation-duration: 10s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
+  animation-play-state: paused;
 }
 
 @keyframes marqueeLine {
@@ -73,12 +74,13 @@
   }
 
   .covers-gallery {
+    left: -40px;
     top: 500px;
   }
 
   .covers-gallery-row {
-    gap: 42px;
-    width: 5818px;
+    gap: 45px;
+    width: 5845px;
     margin-bottom: 60px;
   }
 
