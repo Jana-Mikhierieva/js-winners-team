@@ -8,8 +8,6 @@ const swiper = new Swiper('.swiper', {
     direction: 'horizontal',
     loop: true,
     loopedSlides: 6,
-    // allowSlidePrev: false, 
-    // allowSlideNext: true, 
     navigation: {
         nextEl: '.custom-next',
     },
