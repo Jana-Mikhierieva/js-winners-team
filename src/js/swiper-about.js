@@ -2,7 +2,10 @@ import Swiper from 'swiper/bundle';
 
 import 'swiper/css/bundle';
 
-const swiper = new Swiper('.swiper', {
+const aboutSwiperContainer = document.querySelector('.swiper');
+aboutSwiperContainer.classList.add('about-swiper');
+
+const swiper = new Swiper('.about-swiper', {
     speed: 500,
     slidesPerView: 6,
     direction: 'horizontal',
@@ -16,6 +19,7 @@ const swiper = new Swiper('.swiper', {
         onlyInViewport: true,
         pageUpDown: true,
     },
+    
     breakpoints: {
             320: {
                 slidesPerView: 1,
@@ -33,8 +37,10 @@ const swiper = new Swiper('.swiper', {
     touchMoveStopPropagation: false,
     mousewheel: true,
     grabCursor: true,
-});
+    });
+
+
 document.addEventListener('DOMContentLoaded', function () {
-  const nextButton = document.querySelector('.custom-next');
-  nextButton.classList.remove('swiper-button-lock');
+    const nextButton = document.querySelector('.custom-next');
+    nextButton.classList.remove('swiper-button-lock');
 });

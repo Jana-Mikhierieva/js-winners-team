@@ -160,7 +160,7 @@
 .ac.is-active .ac-trigger .icon-about-me {
     transform: rotate(180deg); 
 }
-/* ----------Slider------------ */
+/* ----------Swiper------------ */
 .about-wrapper {
     display: flex;
     align-items: center;
@@ -170,7 +170,8 @@
     margin: auto;
 }
 
-.swiper.about-swiper {
+/* .swiper.about-swiper */
+.about-swiper {
     width: 260px;
     height: 130px;
 }
@@ -203,7 +204,9 @@
     opacity: 1 !important;
 
 }
-
+.right-arrow.icon {
+    transform: rotate(180deg);
+}
 .swiper-slide-active.custom-slide.swiper-item {
     background-color: #ed3b44;
     transition: background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -251,7 +254,7 @@
         width: 704px;
         padding-top: 64px;
     }
-    .swiper.about-swiper {
+    .about-swiper {
     width: 600px;
     height: 205px;
     }
@@ -325,7 +328,7 @@
         padding-top: 96px;
         width: 1312px;
     }
-    .swiper.about-swiper {
+    .about-swiper {
     width: 1200px;
     }
     .custom-next {
