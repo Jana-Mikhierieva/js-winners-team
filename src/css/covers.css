@@ -1,5 +1,4 @@
 .covers {
-  width: 375px;
   height: 572px;
   padding: 32px 0;
   margin-left: auto;
@@ -50,7 +49,7 @@
   }
 
   to {
-    transform: translateX(-815%);
+    transform: translateX(-400%);
   }
 }
 
@@ -62,14 +61,20 @@
   object-fit: cover;
 }
 
+@media screen and (max-width: 374px) {
+  .covers {
+    width: 375px;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .covers {
-    min-width: 768px;
     height: 1056px;
     padding: 48px 0;
   }
 
   .covers-content {
+    width: 100%;
     height: 960px;
   }
 
@@ -91,7 +96,6 @@
 
 @media screen and (min-width: 1440px) {
   .covers {
-    min-width: 1440px;
     height: 1124px;
     padding: 82px 0;
   }
@@ -102,5 +106,21 @@
 
   .covers-gallery {
     top: 120px;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .covers-gallery {
+    top: -950px;
+  }
+
+  @keyframes marqueeLine {
+    from {
+      transform: translateX(-20%);
+    }
+
+    to {
+      transform: translateX(-300%);
+    }
   }
 }

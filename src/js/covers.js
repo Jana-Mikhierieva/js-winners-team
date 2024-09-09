@@ -102,11 +102,23 @@ const createItemGalleryTemplate = (imgCover) => {
     `;
 };
 
-// Функція для створення рядка галереї з 10 елементів
+const widthDevice = document.documentElement.clientWidth;
+
+// Функція для створення рядка галереї з елементів
 const createGalleryRowTemplate = (items, startIndex) => {
   const galleryRowItems = [];
-  const itemsPerRow = 10;
+  let itemsPerRow = 6;
   let index = startIndex;
+
+  // Кількість елементів в рядку в залежності від пристрою
+ 
+  if (widthDevice >= 1024 && widthDevice <= 1439) {
+    itemsPerRow = 10; // Для desktop
+  } else {
+    if (widthDevice >= 1440) {
+      itemsPerRow = 14; // Для desktop 2к та вище
+    }
+  }
 
   for (let i = 0; i < itemsPerRow; i++) {
     galleryRowItems.push(createItemGalleryTemplate(items[index]));
@@ -135,14 +147,16 @@ const createGalleryRows = (items, numberOfRows) => {
 
 // Функція для визначення типу пристрою та генерації галереї
 const loadGalleryBasedOnDevice = () => {
-  const width = document.documentElement.clientWidth;
-
+  
   let numberOfRows = 4; // Mobile та tablet за замовчуванням
 
-  if (width >= 1024) {
+  if (widthDevice >= 1024 && widthDevice <= 1439) {
     numberOfRows = 5; // Для desktop
+  } else {
+    if (widthDevice >= 1440) {
+      numberOfRows = 7; // Для desktop 2к та вище
+    }
   }
-
 
   // Генеруємо галерею з циклічним зміщенням
   const galleryRowsTemplate = createGalleryRows(imgCovers, numberOfRows);
