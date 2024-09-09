@@ -1,28 +1,21 @@
-import Swiper from 'swiper/bundle';
+// import Swiper from 'swiper/bundle';
+import Swiper from 'swiper';
+import 'swiper/css';
 import LazyLoad from 'vanilla-lazyload';
 
-// const prevButton = document.querySelector('.left-button');
 const nextButton = document.querySelector('.right-button');
 
-// const refsOption = {
-//   prevButton: document.querySelector('.left-button'),
-//   nextButton: document.querySelector('.right-button'),
-//   prevIcon: document.querySelector('.left-icon'),
-//   nextIcon: document.querySelector('.right-icon'),
-// };
-
-// const classOptions = {
-//   disabledBtnClass: 'button-disabled-projects',
-//   disabledIconClass: 'icon-disabled',
-//   disabledAttribute: 'disabled',
-// };
-
 const swiper = new Swiper('.swiper', {
+  slidesPerView: 1,
   spaceBetween: 16,
+  speed: 600,
+  breakpointsBase: 'container',
+  centeredSlides: true,
+  maxBackfaceHiddenSlides: 3,
 
   keyboard: {
     enabled: true,
-    onlyInViewport: false,
+    onlyInViewport: true,
   },
 
   navigation: {
