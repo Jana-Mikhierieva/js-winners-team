@@ -1,6 +1,6 @@
 import { postReview } from './api';
 import iziToast from 'izitoast';
-// import { openModal } from './modal-window';
+import { openModalWindow } from './modal-window.js';
 
 const workTogetherFormEl = document.querySelector('.js-work-form');
 const validationMessage = document.querySelector('.email-validation-message');
@@ -57,13 +57,13 @@ const onSubmitForm = async event => {
   try {
     const postForm = await postReview(workTogetherForm);
 
-    //    openModal(postForm.title, postForm.message);
-
     setTimeout(() => {
       validationMessage.textContent = '';
       emailInputEl.style.borderColor = '';
       workTogetherFormEl.reset();
     }, 1000);
+
+    openModalWindow();
   } catch (error) {
     console.log(error);
   }
