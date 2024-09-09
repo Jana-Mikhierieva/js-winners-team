@@ -96,18 +96,25 @@ const createItemGalleryTemplate = (imgCover) => {
                 srcset="${imgCover.srcset}" 
                 width="282" 
                 height="163" />
-              <img src="${imgCover.src}" alt="${imgCover.alt}" />
+              <img src="${imgCover.src}" alt="${imgCover.alt}" loading="lazy"/>
             </picture>
           </li>
     `;
 };
 
 // Функція для створення рядка галереї з 10 елементів
-const createGalleryRowTemplate = (items) => {
-  const galleryRowItems = items.map(createItemGalleryTemplate).join('');
+const createGalleryRowTemplate = (items, startIndex) => {
+  const galleryRowItems = [];
+  const itemsPerRow = 10;
+  let index = startIndex;
+
+  for (let i = 0; i < itemsPerRow; i++) {
+    galleryRowItems.push(createItemGalleryTemplate(items[index]));
+    index = (index + 1) % items.length; // Оновлюємо індекс, повертаючись до початку масиву
+  }
   return `
     <ul class="covers-gallery-row">
-      ${galleryRowItems}
+      ${galleryRowItems.join('')}
     </ul>
   `;
 };
@@ -115,12 +122,12 @@ const createGalleryRowTemplate = (items) => {
 // Функція для генерації необхідної кількості рядків галереї
 const createGalleryRows = (items, numberOfRows) => {
   const rows = [];
-  const itemsPerRow = 10;
+  const shift = 3; // Зміщення індексу на 3 елементи для кожного нового рядка
+  let startIndex = 0;
 
   for (let i = 0; i < numberOfRows; i++) {
-    const startIndex = i * itemsPerRow;
-    const rowItems = items.slice(startIndex, startIndex + itemsPerRow);
-    rows.push(createGalleryRowTemplate(rowItems));
+    rows.push(createGalleryRowTemplate(items, startIndex));
+    startIndex = (startIndex + shift) % items.length; // Оновлюємо стартовий індекс з урахуванням зміщення
   }
 
   return rows.join('');
@@ -137,12 +144,8 @@ const loadGalleryBasedOnDevice = () => {
   }
 
 
-  const galleryItems = [];
-  for (let i = 0; i < numberOfRows * 10; i++) {
-    galleryItems.push(imgCovers[i % imgCovers.length]);
-  }
-
-  const galleryRowsTemplate = createGalleryRows(galleryItems, numberOfRows);
+  // Генеруємо галерею з циклічним зміщенням
+  const galleryRowsTemplate = createGalleryRows(imgCovers, numberOfRows);
 
   const coversGalleryEl = document.querySelector('.covers-gallery-js');
   if (coversGalleryEl) {
@@ -154,3 +157,46 @@ const loadGalleryBasedOnDevice = () => {
 window.addEventListener('load', loadGalleryBasedOnDevice);
 window.addEventListener('resize', loadGalleryBasedOnDevice);
 
+
+
+// Анімація старт-стоп
+// Функція для запуску анімації
+const startAnimation = () => {
+  const coversGalleryItemsEl = document.querySelectorAll('.covers-gallery-item');
+  coversGalleryItemsEl.forEach(item => {
+    item.style.animationPlayState = 'running';
+  });
+};
+
+// Функція для зупинки анімації
+const stopAnimation = () => {
+  const coversGalleryItems = document.querySelectorAll('.covers-gallery-item');
+  coversGalleryItems.forEach(item => {
+    item.style.animationPlayState = 'paused';
+  });
+};
+
+// Налаштування Intersection Observer
+const observerOpion = {
+  root: null,
+  threshold: 0.1,
+};
+
+const observerCallBack = entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      startAnimation(); // Запускаємо анімацію
+    } else {
+      stopAnimation(); // Зупиняємо анімацію, коли елемент виходить з viewport
+    }
+  });
+};
+
+const observer = new IntersectionObserver(observerCallBack, observerOpion);
+
+console.log(observer);
+
+// Спостерігаємо за секцією "Covers"
+const observerSectionEl = document.querySelector('.covers-js');
+observer.observe(observerSectionEl);
+console.log(observerSectionEl);
