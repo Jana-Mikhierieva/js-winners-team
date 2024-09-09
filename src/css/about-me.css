@@ -9,21 +9,9 @@
     clip: rect(0, 0, 0, 0);
 }
 
-.about-me {
-    width: 375px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .about-me-container {
     padding-top: 64px;
     padding-bottom: 32px;
-}
-
-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
 }
 
 .first-section-about-me {
@@ -34,10 +22,12 @@ img {
     margin-bottom: 32px;
 }
 
-
+.img-about-me {
+    width: 343px;
+    height: 500px;
+}
 
 .text-about-me-container {
-    max-width: 343px;
     background-color: #242527;
     border-radius: 24px;
 }
