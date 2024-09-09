@@ -39,8 +39,8 @@ export async function postReview(workTogetherData) {
     return response.data;
   } catch (error) {
     iziToast.error({
-      message: `${error.response.data.message}`,
-      position: 'topRight',
+      message: 'Oops...Something went wrong!',
+      position: 'bottomRight',
     });
   }
 }

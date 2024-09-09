@@ -15,9 +15,6 @@ let workTogetherForm = {
 const validateEmail = () => {
   const emailPattern = '^\\w+(\\.\\w+)?@[a-zA-Z_]+?\\.[a-zA-Z]{2,6}$';
   if (emailInputEl.value.match(emailPattern)) {
-    validationMessage.textContent = 'Succes!';
-    validationMessage.style.color = '#3cbc81';
-    emailInputEl.style.borderColor = '#3cbc81';
     return true;
   } else {
     validationMessage.textContent = 'Invalid email, try again';
@@ -57,14 +54,23 @@ const onSubmitForm = async event => {
   try {
     const postForm = await postReview(workTogetherForm);
 
-    setTimeout(() => {
-      validationMessage.textContent = '';
-      emailInputEl.style.borderColor = '';
-      workTogetherFormEl.reset();
-    }, 1000);
+    if (postForm) {
+      validationMessage.textContent = 'Success!';
+      validationMessage.style.color = '#3cbc81';
+      emailInputEl.style.borderColor = '#3cbc81';
 
-    openModalWindow();
+      setTimeout(() => {
+        validationMessage.textContent = '';
+        emailInputEl.style.borderColor = '';
+        workTogetherFormEl.reset();
+        openModalWindow();
+      }, 1000);
+    }
   } catch (error) {
+    iziToast.error({
+      message: 'Oops... Something went wrong!',
+      position: 'bottomRight',
+    });
     console.log(error);
   }
 };
