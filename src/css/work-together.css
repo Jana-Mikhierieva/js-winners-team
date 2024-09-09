@@ -1,7 +1,7 @@
 .work-together__section {
   padding-top: 32px;
   padding-bottom: 32px;
-  background-image: url('./img/background/background-together.png');
+  background-image: url('/img/background/background-together.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 212px 0;
@@ -10,7 +10,7 @@
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
   screen and (min-resolution: 192dpi) {
   .work-together__section {
-    background-image: url('./img/background/background-together@2x.png');
+    background-image: url('/img/background/background-together@2x.png');
   }
 }
 
