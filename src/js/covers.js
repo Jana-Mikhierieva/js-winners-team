@@ -170,19 +170,32 @@ const startAnimation = () => {
 
 // Функція для зупинки анімації
 const stopAnimation = () => {
-  const coversGalleryItems = document.querySelectorAll('.covers-gallery-item');
-  coversGalleryItems.forEach(item => {
+  const coversGalleryItemsEl = document.querySelectorAll('.covers-gallery-item');
+  coversGalleryItemsEl.forEach(item => {
     item.style.animationPlayState = 'paused';
   });
 };
 
+// Функція для перевірки видимості галереї
+const checkGalleryVisibility = () => {
+  const observerSectionEl = document.querySelector('.covers-js');
+  if (observerSectionEl) {
+    const rect = observerSectionEl.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      startAnimation(); // Якщо секція у viewport, запускаємо анімацію
+    } else {
+      stopAnimation(); // Якщо секція поза viewport, зупиняємо анімацію
+    }
+  }
+};
+
 // Налаштування Intersection Observer
-const observerOpion = {
+const observerOptions = {
   root: null,
   threshold: 0.1,
 };
 
-const observerCallBack = entries => {
+const observerCallback = entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       startAnimation(); // Запускаємо анімацію
@@ -192,11 +205,22 @@ const observerCallBack = entries => {
   });
 };
 
-const observer = new IntersectionObserver(observerCallBack, observerOpion);
+const observer = new IntersectionObserver(observerCallback, observerOptions);
 
-console.log(observer);
+window.addEventListener('load', () => {
+  // Спостерігаємо за секцією "Covers"
+  const observerSectionEl = document.querySelector('.covers-js');
+  
+  if (observerSectionEl) {
+    observer.observe(observerSectionEl);
 
-// Спостерігаємо за секцією "Covers"
-const observerSectionEl = document.querySelector('.covers-js');
-observer.observe(observerSectionEl);
-console.log(observerSectionEl);
+    // Явно перевіряємо видимість після завантаження сторінки
+    checkGalleryVisibility();
+  }
+});
+
+// Додаємо обробник для зміни розміру вікна
+window.addEventListener('resize', () => {
+  checkGalleryVisibility(); // Перевіряємо видимість галереї при зміні розміру вікна
+});
+
