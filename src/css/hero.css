@@ -5,6 +5,7 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+
 @media screen and (min-resolution: 192dpi) and (min-width: 375px) {
     .hero {
         background-image: url('../img/background/hero-mob2x.png');
@@ -16,6 +17,7 @@
     padding-bottom: 32px;
     text-transform: uppercase;
 }
+
 .hero__inner {
     height: 499px;
     display: flex;
@@ -53,6 +55,7 @@ h1.hero__text {
     height: 37px;
     padding: 10px 8px;
 }
+
 .hero__link:focus,
 .hero__link:hover {
     background-color: #e0373f;
@@ -110,6 +113,7 @@ h1.hero__text {
     .hero {
         background-image: url('../img/background/hero-desc.png');
     }
+    
     @media screen and (min-resolution: 192dpi) and (min-width: 1440px) {
         .hero {
             background-image: url('../img/background/hero-desc@2x.png');
