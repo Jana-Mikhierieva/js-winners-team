@@ -21,6 +21,9 @@ document.querySelectorAll(`.ac-trigger`).forEach(el => {
     el.addEventListener('click', () => {
         let content = el.closest('.ac').querySelector('.ac-panel');
 
+        const arrow = this.querySelector('.icon-about-me');
+        arrow.classList.toggle('is-active');
+
         content.style.maxHeight = content.scrollHeight + 'px';
     })
 });
