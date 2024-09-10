@@ -24,7 +24,7 @@ import{g as H,A as W,S as q,a as C,i as p,$ as U}from"./assets/vendor-BhUfECMe.j
                     data-src="${t.avatar_url}" 
                     alt="commentator's photo" 
                 />
-                <h4 class="reviews__title">${t.author}</h4>
+                <h3 class="reviews__title">${t.author}</h3>
                 <p class="reviews__text">${t.review}</p>
             </a>
             <div id="review${s}" class="mfp-hide">
@@ -32,7 +32,7 @@ import{g as H,A as W,S as q,a as C,i as p,$ as U}from"./assets/vendor-BhUfECMe.j
                     <button class="mfp-close">&times;</button>
                     <img data-src="${t.avatar_url}" alt="${t.author}" class="popup-image lazy__load" />
                     <div class="popup-content">
-                        <h2>${t.author}</h2>
+                        <h3>${t.author}</h3>
                         <p>${t.review}</p>
                     </div>
                 </div>
