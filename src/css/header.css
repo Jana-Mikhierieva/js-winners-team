@@ -11,6 +11,7 @@
 
 .header.is-scrolled {
   position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .header-container {
@@ -22,7 +23,6 @@
 }
 
 .header.is-scrolled > .header-container {
-  background-color: rgba(0, 0, 0, 0.5);
   padding-top: 5px;
   height: 65px;
 }
