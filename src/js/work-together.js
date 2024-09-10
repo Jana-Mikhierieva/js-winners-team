@@ -52,6 +52,13 @@ const validateEmail = () => {
 };
 
 emailInputEl.addEventListener('input', () => {
+  emailInputEl.style.borderColor = '';
+});
+commentInputEl.addEventListener('input', () => {
+  commentInputEl.style.borderColor = '';
+});
+
+emailInputEl.addEventListener('input', () => {
   validationMessage.textContent = '';
   emailInputEl.style.borderColor = '';
 });
@@ -66,13 +73,6 @@ const onSubmitForm = async event => {
   if (isFormFieldsEmpty()) {
     return;
   }
-
-  emailInputEl.addEventListener('input', () => {
-    emailInputEl.style.borderColor = '';
-  });
-  commentInputEl.addEventListener('input', () => {
-    commentInputEl.style.borderColor = '';
-  });
 
   if (!validateEmail()) {
     return;
