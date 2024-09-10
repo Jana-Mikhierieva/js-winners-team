@@ -12,7 +12,6 @@
   font-style: normal;
 }
 body {
-
   font-family: 'Inter Tight', sans-serif;
   margin: 0;
   background-color: #1c1d20;
@@ -22,6 +21,9 @@ body {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: -0.02em;
+}
+body.no-scroll {
+  overflow: hidden;
 }
 img {
   display: block;
@@ -41,13 +43,13 @@ h2 {
   scroll-behavior: smooth;
 }
 .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    border: 0;
-    padding: 0;
-    clip: rect(0, 0, 0, 0);
-    clip-path: inset(50%);
-    margin: -1px;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  margin: -1px;
 }
