@@ -61,10 +61,14 @@
 }
 
 .reviews__btn{
+	display:flex ;
+	justify-content: center;
+	align-items: center;
+	width: 52px;
+	height: 52px;
 	background-color: transparent;
 	border: solid 1px #FAFAFA80;
 	border-radius: 50%;
-	padding: 18px;
 }
 
 .reviews__btn--left{
@@ -76,8 +80,21 @@
 }
 
  .reviews__icon {
+	width: 24px;
+	height: 24px;
 	fill: none;
 	stroke:#FAFAFA80 ;
+}
+
+@media screen and (min-width: 768px) {
+	.reviews__btn{
+	      width: 68px;
+		height: 68px;
+	}
+	.reviews__icon {
+		width: 32px;
+		height: 32px;
+	}
 }
 
 .reviews__icon--right {
