@@ -41,6 +41,7 @@
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-play-state: paused;
+  animation-direction: alternate;
 }
 
 @keyframes marqueeLine {
