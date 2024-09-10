@@ -6,10 +6,37 @@ const workTogetherFormEl = document.querySelector('.js-work-form');
 const validationMessage = document.querySelector('.email-validation-message');
 
 const emailInputEl = workTogetherFormEl.elements.email;
+const commentInputEl = workTogetherFormEl.elements.comment;
 
 let workTogetherForm = {
   email: '',
   comment: '',
+};
+
+const isFormFieldsEmpty = () => {
+  const workTogetherFormEmail = emailInputEl.value.trim();
+  const workTogetherFormComment = commentInputEl.value.trim();
+
+  let isEmpty = false;
+
+  if (workTogetherFormEmail === '') {
+    emailInputEl.style.borderColor = '#ed3b44';
+    isEmpty = true;
+  }
+
+  if (workTogetherFormComment === '') {
+    commentInputEl.style.borderColor = '#ed3b44';
+    isEmpty = true;
+  }
+
+  if (isEmpty) {
+    iziToast.error({
+      message: 'Please fill in all fields',
+      position: 'bottomRight',
+    });
+  }
+
+  return isEmpty;
 };
 
 const validateEmail = () => {
@@ -36,13 +63,16 @@ const onSubmitForm = async event => {
   const workTogetherFormComment =
     workTogetherFormEl.elements.comment.value.trim();
 
-  if (workTogetherFormEmail === '' || workTogetherFormComment === '') {
-    iziToast.error({
-      message: 'Please fill in all fields',
-      position: 'bottomRight',
-    });
+  if (isFormFieldsEmpty()) {
     return;
   }
+
+  emailInputEl.addEventListener('input', () => {
+    emailInputEl.style.borderColor = '';
+  });
+  commentInputEl.addEventListener('input', () => {
+    commentInputEl.style.borderColor = '';
+  });
 
   if (!validateEmail()) {
     return;
