@@ -62,90 +62,100 @@
   border: 1px solid rgba(250, 250, 250, 0.2);
   border-radius: 100px;
   padding: 9px;
-  transform: rotate(180deg);
+  transform: rotate(0deg);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   width: 16px;
   height: 16px;
 }
 
+.icon-about-me.is-active   {
+    transform: rotate(180deg);
+}
+
+.icon-about-me:hover {
+    border-color: #FAFAFA;
+}
+
+
+
 /*--------- Triger ---------*/
 
 .ac {
-  background: none !important;
-  border: none !important;
-  padding-bottom: 20px !important;
+  background: none;
+  border: none;
+  padding-bottom: 20px;
 }
 
 .ac .ac-trigger {
-  text-transform: uppercase !important;
+  text-transform: uppercase;
 
-  font-weight: 600 !important;
-  font-size: 16px !important;
-  line-height: 150% !important;
-  letter-spacing: -0.02em !important;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.02em;
 
-  color: rgba(250, 250, 250, 0.4) !important;
+  color: rgba(250, 250, 250, 0.4);
 }
 
 .ac-panel-item {
-  padding-top: 8px !important;
+  padding-top: 8px ;
 }
 
 .ac-panel-list {
-  display: flex !important;
-  flex-direction: column !important;
+  display: flex;
+  flex-direction: column;
 
-  row-gap: 32px !important;
+  row-gap: 32px;
 }
 
 .ac .ac-panel .ac-text {
-  color: #fafafa !important;
-  font-weight: 500 !important;
-  font-size: 16px !important;
-  line-height: 150% !important;
-  letter-spacing: -0.02em !important;
-  padding: 0 !important;
+  color: #fafafa;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.02em;
+  padding: 0;
 }
 
 .ac {
-  border-bottom: 1px solid rgba(250, 250, 250, 0.2) !important;
-  margin-bottom: 32px !important;
-  margin-top: 0 !important;
+  border-bottom: 1px solid rgba(250, 250, 250, 0.2);
+  margin-bottom: 32px;
+  margin-top: 0;
 }
 
 .ac:last-child {
-  margin-bottom: 0 !important;
+  margin-bottom: 0;
 }
 
 .ac .ac-trigger {
-  display: flex !important;
+  display: flex;
   justify-content: space-between;
   align-items: start;
-  padding: 0 !important;
+  padding: 0;
 }
 
 .list-roles {
-  display: flex !important;
-  flex-direction: column !important;
+  display: flex;
+  flex-direction: column;
 
-  row-gap: 10px !important;
-  padding-bottom: 32px !important;
+  row-gap: 10px;
+  padding-bottom: 32px;
 }
 
 .education-list {
-  display: flex !important;
-  flex-direction: column !important;
+  display: flex;
+  flex-direction: column;
 
-  row-gap: 10px !important;
-  padding-bottom: 32px !important;
+  row-gap: 10px;
+  padding-bottom: 32px;
 }
 
 .education-list-item {
-  max-width: 465px !important;
+  max-width: 465px;
 }
 
 .ac .ac-trigger::after {
-  content: '' !important;
+  content: '';
 }
 
 .icon-about-me {
@@ -177,9 +187,9 @@
 .swiper-slide.swiper-item {
   border-radius: 50%;
   border: 1px solid rgba(170, 164, 164, 0.2);
-  width: 130px !important;
-  height: 130px !important;
-  margin-right: 0 !important;
+  width: 130px;
+  height: 130px;
+  margin-right: 0;
 }
 .swiper-slide.custom-slide.swiper-item {
   box-sizing: border-box;
@@ -195,7 +205,7 @@
   fill: none;
   stroke: #3b3b3b;
   stroke-width: 2px;
-  opacity: 1 !important;
+  opacity: 1;
 }
 .right-arrow.icon {
   transform: rotate(180deg);
@@ -240,7 +250,7 @@
   /*--------- Triger ---------*/
 
   .ac {
-    padding-bottom: 32px !important;
+    padding-bottom: 32px;
   }
   .about-wrapper {
     width: 704px;
@@ -251,8 +261,8 @@
     height: 205px;
   }
   .swiper-slide.swiper-item {
-    width: 200px !important;
-    height: 200px !important;
+    width: 200px;
+    height: 200px;
   }
   .custom-next {
     width: 40px;
@@ -292,28 +302,29 @@
   /*--------- Triger ---------*/
 
   .ac {
-    padding-bottom: 32px !important;
+    padding-bottom: 32px;
   }
 
   .ac-panel-item {
-    padding-top: 0px !important;
+    padding-top: 0px;
   }
 
   .ac-panel-list {
-    padding-left: 688px !important;
+    padding-left: 688px;
   }
 
   .list-roles {
-    padding-left: 688px !important;
+    padding-left: 688px;
   }
 
   .education-list {
-    padding-left: 688px !important;
+    padding-left: 688px;
   }
 
   .ac-panel-item {
-    max-width: 612px !important;
+    max-width: 612px;
   }
+
   .about-wrapper {
     padding-top: 96px;
     width: 1312px;
