@@ -170,6 +170,11 @@
     margin-top: 64px;
   }
 
+  .container .button {
+    width: 68px;
+    height: 68px;
+  }
+
   .icon {
     width: 32px;
     height: 32px;
