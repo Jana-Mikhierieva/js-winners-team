@@ -4,12 +4,15 @@
   | default @import url()
   |============================
 */
+@import 'izitoast/dist/css/iziToast.min.css';
+@import 'swiper/swiper-bundle.css';
+@import 'accordion-js/dist/accordion.min.css';
+@import 'magnific-popup/dist/magnific-popup.css';
 
 /* Common styles */
 @import url('./reset.css');
 @import url('./base.css');
 @import url('./container.css');
-
 
 /* Sections style */
 @import url('./header.css');
@@ -22,11 +25,3 @@
 @import url('./projects.css');
 @import url('./reviews.css');
 @import url('./work-together.css');
-
-
-
-/* стилі бібліотек */
-@import "izitoast/dist/css/iziToast.min.css";
-@import 'swiper/swiper-bundle.css';
-@import 'accordion-js/dist/accordion.min.css';
-@import 'magnific-popup/dist/magnific-popup.css';
