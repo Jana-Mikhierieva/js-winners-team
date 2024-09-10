@@ -2,8 +2,8 @@ import Swiper from 'swiper/bundle';
 
 import 'swiper/css/bundle';
 
-const aboutSwiperContainer = document.querySelector('.swiper');
-aboutSwiperContainer.classList.add('about-swiper');
+// const aboutSwiperContainer = document.querySelector('.swiper');
+// aboutSwiperContainer.classList.add('about-swiper');
 
 const swiper = new Swiper('.about-swiper', {
     speed: 500,
