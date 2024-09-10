@@ -114,16 +114,11 @@
 }
 
 .button-wrapper > .swiper-button-disabled {
-  border-color: #fafafa33 !important;
-  /* stroke: #fafafa33; */
+  border-color: #fafafa33;
   .icon {
     stroke: #fafafa33;
   }
 }
-
-/* .icon-disabled {
-  stroke: #fafafa33;
-} */
 
 @media screen and (min-width: 768px) {
   .projects {
