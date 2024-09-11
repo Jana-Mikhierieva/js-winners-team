@@ -6,12 +6,8 @@
         #69292d 32%, 
         #1c1d20 50%, 
         #1c1d20 100%);
-    
-    /* background-size: cover;
-    background-image: url('../img/background/hero-mob.png');
-    background-repeat: no-repeat;
-    background-position: center; */
 }
+
 .hero::before {
         content: '';
         position: absolute;
@@ -29,12 +25,6 @@
         pointer-events: none;
         opacity: 0.2;
 }
-
-/* @media screen and (min-resolution: 192dpi) and (min-width: 375px) {
-    .hero {
-        background-image: url('../img/background/hero-mob2x.png');
-    }
-} */
 
 .hero__wrapper {
     padding-top: 281px;
@@ -96,26 +86,18 @@ h1.hero__text {
 }
 
 @media screen and (min-width: 768px) {
+
     .hero::before {
         left: -187px;
         height: 1024px;
         background: repeating-linear-gradient(to right,
-                    rgba(0, 0, 0, 0.5),
-                    rgba(0, 0, 0, 0.5) 1px,
-                    rgba(0, 0, 0, 0.8) 5px,
-                    rgba(0, 0, 0, 0.9) 5px,
-                    rgba(0, 0, 0, 0.9) 6px,
-                    rgba(0, 0, 0, 0) 70.73px);
+                rgba(0, 0, 0, 0.5),
+                rgba(0, 0, 0, 0.5) 1px,
+                rgba(0, 0, 0, 0.8) 5px,
+                rgba(0, 0, 0, 0.9) 5px,
+                rgba(0, 0, 0, 0.9) 6px,
+                rgba(0, 0, 0, 0) 70.73px);
     }
-    /* .hero {
-        background-image: url('../img/background/hero-tab.png');
-    }
-    
-    @media screen and (min-resolution: 192dpi) and (min-width: 768px) {
-        .hero {
-            background-image: url('../img/background/hero-tab2x.png');
-        }
-    } */
 
     .hero__wrapper {
         padding-top: 300px;
@@ -149,20 +131,11 @@ h1.hero__text {
 }
 
 @media screen and (min-width: 1440px) {
+
     .hero::before {
-            left: -49.44%;
-            height: 900px;
-            
-        }
-    /* .hero {
-        background-image: url('../img/background/hero-desc.png');
+        left: -49.44%;
+        height: 900px;
     }
-    
-    @media screen and (min-resolution: 192dpi) and (min-width: 1440px) {
-        .hero {
-            background-image: url('../img/background/hero-desc@2x.png');
-        }
-    } */
 
     .hero__inner {
         height: 568px;
