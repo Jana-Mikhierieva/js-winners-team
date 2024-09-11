@@ -95,7 +95,6 @@
 }
 
 .ac .ac-panel .ac-panel-item .ac-text {
-  color: #fafafa;
   font-weight: 500;
   font-size: 16px;
   line-height: 150%;
@@ -118,6 +117,10 @@
   margin-bottom: 0;
 }
 
+.accordion-container .ac .ac-panel .ac-text {
+  color: #FAFAFA;
+}
+
 .accordion-container .ac .ac-trigger {
   display: flex;
   justify-content: space-between;
@@ -129,10 +132,11 @@
 .list-roles {
   display: flex;
   flex-direction: column;
-
+  
   row-gap: 10px;
   padding-bottom: 32px;
 }
+
 
 .education-list {
   display: flex;
@@ -249,7 +253,7 @@
 
   /*--------- Triger ---------*/
 
-  .ac {
+  .accordion-container .ac {
     padding-bottom: 32px;
   }
   .about-wrapper {

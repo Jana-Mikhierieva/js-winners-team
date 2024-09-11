@@ -1,15 +1,29 @@
 .hero {
     overflow: hidden;
-    background-size: cover;
-    background-image: url('../img/background/hero-mob.png');
-    background-repeat: no-repeat;
-    background-position: center;
+    background: linear-gradient(
+        to right, 
+        #ed3b44, 
+        #69292d 32%, 
+        #1c1d20 50%, 
+        #1c1d20 100%);
 }
 
-@media screen and (min-resolution: 192dpi) and (min-width: 375px) {
-    .hero {
-        background-image: url('../img/background/hero-mob2x.png');
-    }
+.hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -65px;
+        width: 100%;
+        height: 812px;
+        background: repeating-linear-gradient(to right,
+                rgba(0, 0, 0, 0.5),
+                rgba(0, 0, 0, 0.5) 1px,
+                rgba(0, 0, 0, 0.8) 5px,
+                rgba(0, 0, 0, 0.9) 5px,
+                rgba(0, 0, 0, 0.9) 6px,
+                rgba(0, 0, 0, 0) 57.09px);
+        pointer-events: none;
+        opacity: 0.2;
 }
 
 .hero__wrapper {
@@ -32,6 +46,9 @@ h1.hero__text {
     letter-spacing: -0.03em;
     text-transform: uppercase;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.hero__animation {
+    display: block;
 }
 
 .hero__list {
@@ -59,6 +76,7 @@ h1.hero__text {
 .hero__link:focus,
 .hero__link:hover {
     background-color: #e0373f;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero__email {
@@ -68,14 +86,17 @@ h1.hero__text {
 }
 
 @media screen and (min-width: 768px) {
-    .hero {
-        background-image: url('../img/background/hero-tab.png');
-    }
-    
-    @media screen and (min-resolution: 192dpi) and (min-width: 768px) {
-        .hero {
-            background-image: url('../img/background/hero-tab2x.png');
-        }
+
+    .hero::before {
+        left: -187px;
+        height: 1024px;
+        background: repeating-linear-gradient(to right,
+                rgba(0, 0, 0, 0.5),
+                rgba(0, 0, 0, 0.5) 1px,
+                rgba(0, 0, 0, 0.8) 5px,
+                rgba(0, 0, 0, 0.9) 5px,
+                rgba(0, 0, 0, 0.9) 6px,
+                rgba(0, 0, 0, 0) 70.73px);
     }
 
     .hero__wrapper {
@@ -110,14 +131,10 @@ h1.hero__text {
 }
 
 @media screen and (min-width: 1440px) {
-    .hero {
-        background-image: url('../img/background/hero-desc.png');
-    }
-    
-    @media screen and (min-resolution: 192dpi) and (min-width: 1440px) {
-        .hero {
-            background-image: url('../img/background/hero-desc@2x.png');
-        }
+
+    .hero::before {
+        left: -49.44%;
+        height: 900px;
     }
 
     .hero__inner {
