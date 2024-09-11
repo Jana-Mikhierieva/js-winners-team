@@ -9,3 +9,4 @@ import './js/projects';
 import './js/reviews';
 import './js/work-together';
 import './js/swiper-about';
+import './js/benefits';
