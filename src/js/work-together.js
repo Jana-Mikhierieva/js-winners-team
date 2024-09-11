@@ -52,15 +52,11 @@ const validateEmail = () => {
 };
 
 emailInputEl.addEventListener('input', () => {
+  validationMessage.textContent = '';
   emailInputEl.style.borderColor = '';
 });
 commentInputEl.addEventListener('input', () => {
   commentInputEl.style.borderColor = '';
-});
-
-emailInputEl.addEventListener('input', () => {
-  validationMessage.textContent = '';
-  emailInputEl.style.borderColor = '';
 });
 
 const onSubmitForm = async event => {
