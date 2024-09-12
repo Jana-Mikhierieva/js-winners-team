@@ -34,7 +34,6 @@ h2 {
   color: rgba(250, 250, 250, 0.4);
 }
 :root {
-  font-optical-sizing: auto;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

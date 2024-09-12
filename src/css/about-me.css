@@ -118,7 +118,7 @@
 }
 
 .accordion-container .ac .ac-panel .ac-text {
-  color: #FAFAFA;
+  color: #fafafa;
 }
 
 .accordion-container .ac .ac-trigger {
@@ -132,11 +132,10 @@
 .list-roles {
   display: flex;
   flex-direction: column;
-  
+
   row-gap: 10px;
   padding-bottom: 32px;
 }
-
 
 .education-list {
   display: flex;
@@ -212,10 +211,7 @@
 .swiper-slide-active.custom-slide.swiper-item {
   background-color: #ed3b44;
   box-shadow: 0 1px 1px rgba(200, 200, 200, 0.5);
-  transition: background-color 500ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 0 8px 16px rgba(0, 0, 0, 0.3),
-    transform 300ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .skill {
