@@ -55,13 +55,13 @@
   padding: 0;
   cursor: pointer;
   background: #1c1d20;
-  --color1: #fafafa;
+  stroke: #fafafa;
   border: none;
-  transition: --color1 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-close-button:hover,
 .modal-close-button:focus {
-  --color1: #aaaaaa;
+  stroke: #e0373f;
 }
 .modal-close-icon {
   width: 22px;
