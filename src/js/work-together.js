@@ -39,6 +39,14 @@ const isFormFieldsEmpty = () => {
   return isEmpty;
 };
 
+const updateInputStyle = inputElement => {
+  if (inputElement.value.trim() !== '') {
+    inputElement.classList.add('filled');
+  } else {
+    inputElement.classList.remove('filled');
+  }
+};
+
 const validateEmail = () => {
   const emailPattern = '^\\w+(\\.\\w+)?@[a-zA-Z_]+?\\.[a-zA-Z]{2,6}$';
   if (emailInputEl.value.match(emailPattern)) {
@@ -52,12 +60,17 @@ const validateEmail = () => {
 };
 
 emailInputEl.addEventListener('input', () => {
+  updateInputStyle(emailInputEl);
   validationMessage.textContent = '';
   emailInputEl.style.borderColor = '';
 });
 commentInputEl.addEventListener('input', () => {
+  updateInputStyle(commentInputEl);
   commentInputEl.style.borderColor = '';
 });
+
+updateInputStyle(emailInputEl);
+updateInputStyle(commentInputEl);
 
 const onSubmitForm = async event => {
   event.preventDefault();
@@ -81,6 +94,8 @@ const onSubmitForm = async event => {
     const postForm = await postReview(workTogetherForm);
 
     if (postForm) {
+      updateInputStyle(emailInputEl);
+      updateInputStyle(commentInputEl);
       validationMessage.textContent = 'Success!';
       validationMessage.style.color = '#3cbc81';
       emailInputEl.style.borderColor = '#3cbc81';

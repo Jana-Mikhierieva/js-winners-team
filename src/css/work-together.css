@@ -122,7 +122,8 @@
 }
 
 .work-together__input:hover,
-.work-together__input:focus {
+.work-together__input:focus,
+.work-together__input.filled {
   border-bottom: 1px solid rgba(250, 250, 250, 0.5);
   color: #ffffff;
 }
@@ -137,6 +138,14 @@
   .work-together__input {
     width: 390px;
   }
+}
+.work-together__input:-webkit-autofill,
+.work-together__input:-webkit-autofill:hover,
+.work-together__input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #ffffff;
+  -webkit-box-shadow: 0 0 0px 40rem #1c1d20 inset,
+    0 1px 0 0 rgba(250, 250, 250, 0.5);
+  border-bottom: none;
 }
 
 .email-validation-message {
